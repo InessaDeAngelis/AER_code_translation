@@ -35,4 +35,4 @@ The repo is organized by journal issue, with all the September 2023 materials lo
 **Note**: [The Macroeconomics of the Greek Depression](https://www.aeaweb.org/articles?id=10.1257/aer.20210864) (Sep 2023) and [Matching Mechanisms for Refugee Resettlement](https://www.aeaweb.org/articles?id=10.1257/aer.20210096) (Oct 2023) articles are not included because their replication packages are unavailable. 
 
 ## Instructions
-Please translate the STATA code into R or Python (pick the language you are most comfortable in) and add the file into the `Translated code` folder within each article folder. Clearly label the translated code documents with your name and identity issues you discovered and fixed during the translation process. 
+Please translate the STATA code into R or Python (pick the language you are most comfortable in) and add the file into the `Translated code` folder within each article folder. Clearly label the translated code documents with your name and identify issues you discovered and fixed during the translation process. 
