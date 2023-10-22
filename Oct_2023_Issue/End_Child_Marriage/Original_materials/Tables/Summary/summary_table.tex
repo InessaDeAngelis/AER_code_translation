@@ -1,0 +1,54 @@
+\begin{table}[H]
+\begin{adjustwidth}{-0.5cm}{-0.5cm}
+		\centering
+		\caption{Sample summary statistics}\label{sumstat}
+        \begin{adjustbox}{width= 1\textwidth}
+        \begin{threeparttable}
+        \onehalfspacing
+        \normalsize
+	    \begin{tabular}{L{8cm} L{0.000001cm} C{1.75cm} L{0.000001cm} C{1.75cm} L{0.000001cm} C{1.75cm} L{0.000001cm} C{1.75cm}}
+	    \toprule
+		\midrule
+		Age at Program Start: & \multicolumn{4}{c}{Girls age 15-17 (N=15,576)} & \multicolumn{4}{c}{Girls age 15 (N=5,871)} \\
+		\midrule
+		&& Mean && S.D. && Mean && S.D.  \\
+		\midrule
+		\midrule
+		\end{tabular}
+	            \begin{minipage}{8cm}
+					\begin{tabular}{L{8cm}}
+						\input{./Tables/Summary/individual_var.tex}
+					\end{tabular}	
+				\end{minipage}%
+				\begin{minipage}{1.7500001cm}
+					\begin{tabular}{L{0.000001cm} C{1.75cm}}
+						\input{./Tables/Summary/sindividual_mean.tex}
+					\end{tabular}
+				\end{minipage}%
+				\begin{minipage}{1.7500001cm}
+					\begin{tabular}{L{0.000001cm} C{1.75cm}}
+						\input{./Tables/Summary/sindividual_sd.tex}
+					\end{tabular}
+				\end{minipage}%
+				\begin{minipage}{1.7500001cm}
+					\begin{tabular}{L{0.000001cm} C{1.75cm}}
+						\input{./Tables/Summary/sindividual15_mean.tex}
+					\end{tabular}
+				\end{minipage}%
+				\begin{minipage}{1.7500001cm}
+					\begin{tabular}{L{0.000001cm} C{1.75cm}}
+						\input{./Tables/Summary/sindividual15_sd.tex}
+					\end{tabular}
+				\end{minipage}%
+	    \begin{tabular}{L{8cm} L{0.000001cm} C{1.75cm} L{0.000001cm} C{1.75cm} L{0.000001cm} C{1.75cm} L{0.000001cm} C{1.75cm}}
+		\bottomrule
+		&& && && && \\
+		\end{tabular}
+		\vspace{-0.5cm}
+		\begin{tablenotes}		
+\emph{Notes:} Sample includes all women in study villages age 15-17 and unmarried at program start and followed-up at endline.
+	    \end{tablenotes}				
+\end{threeparttable}
+\end{adjustbox}
+\end{adjustwidth}
+\end{table}		

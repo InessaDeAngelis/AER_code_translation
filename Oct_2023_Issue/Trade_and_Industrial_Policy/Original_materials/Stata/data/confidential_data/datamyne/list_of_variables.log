@@ -1,0 +1,31 @@
+------------------------------------------------------------------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  /Users/ahmadlp/Dropbox/LL2020/Replication_Aug_2023/Stata/data/confidential_data/datamyne/list_of_variables.log
+  log type:  text
+ opened on:   8 Aug 2023, 17:37:13
+. codebook, compact
+
+Variable           Obs  Unique      Mean   Min       Max  Label
+------------------------------------------------------------------------------------------------------------------------------------------------------
+ProductHS     1.73e+07    7296         .     .         .  Colombian 8-digit Harmonized System Code
+CountryofO~n  1.73e+07     251         .     .         .  Country of Origin Of the Imported Good
+Quantity      1.73e+07  654431  15927.57    -1  9.45e+08  Quantity: Unit Types are the same within an HS8 Product
+CIFValueUS    1.73e+07 3520621  18494.78     0  2.68e+08  CIF (Cost, Insurance, and Freight) Value of Imports in Current US Dollars
+FOBValueUS    1.73e+07 2876140  17495.81     0  1.77e+08  FOB (Free On Board) Value of Imports, expressed in Current US Dollars
+NetWeight     1.73e+07  982888  10117.25  -.01  7.12e+07  Net Weight in Kilograms
+GrossWeight   1.73e+07 1061598     10300     0  7.12e+07  Gross Weight in Kilograms
+ExchangeRate  1.73e+07    1092         .     .         .  Exchange Rate expressed in Colombian Pesos per 1 US Dollar
+CustomsVal~e  1.73e+07 9215532  3.36e+07   -54  2.10e+12  Customs Value Tariff Base Expressed in Colombian Pesos
+TariffPerc~t  1.73e+07   11452         .     .         .  Import Tariff Rate Expressed in Ad-valorem Percentage Terms
+VATPercent    1.73e+07      56         .     .         .  Value Added Tax Rate Expressed in Ad-valorem Percentage Terms
+Valuetobepay  1.73e+07 2069902   5911720     0  2.68e+10  Total Value of Taxes and Tariffs (including VAT) in Colombian Pesos
+Provider      1.73e+07  226289         .     .         .  Name of the Exporting (to Colombia) Firm
+year          1.73e+07       7  2010.297  2007      2013  
+month         1.73e+07      12    6.6909     1        12  
+------------------------------------------------------------------------------------------------------------------------------------------------------
+. log close
+      name:  <unnamed>
+       log:  /Users/ahmadlp/Dropbox/LL2020/Replication_Aug_2023/Stata/data/confidential_data/datamyne/list_of_variables.log
+  log type:  text
+ closed on:   8 Aug 2023, 17:41:46
+------------------------------------------------------------------------------------------------------------------------------------------------------

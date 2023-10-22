@@ -1,0 +1,15 @@
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{adjustbox}{width=0.7\textwidth}
+\begin{tabular}{lcccccc}
+\midrule
+& \multicolumn{5}{c}{dependent: trade elasticity ($ \sigma_{k} - 1 $)} \\ 
+\toprule
+$\mu_{i,k}=\frac{1}{N_{i,k}}\times\frac{\gamma_{k}}{\gamma_{k}-1}$ &-0.138\sym{***} &&-0.139\sym{***} &&-0.279\sym{***} \\
+&  0.0111&&  0.0111&&  0.0157\\  \\
+\addlinespace
+Year fixed effects    &   No   &&    Yes    &&   Yes  \\
+Origin fixed effects  &   No   &&    No     &&  Yes   \\
+Observations        &    3,221&&    3,221&&    3,221 \\ 
+\bottomrule
+\end{tabular}
+\end{adjustbox}

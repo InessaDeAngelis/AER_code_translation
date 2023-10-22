@@ -1,0 +1,33 @@
+\documentclass{article}
+\usepackage{booktabs}
+\newcommand{\specialcell}[2][c]{%
+\begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+\usepackage{multirow}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{a4paper, left=20mm, right=20mm, top=25mm, bottom=25mm}
+\usepackage{array}
+\usepackage{adjustbox}
+\usepackage{amsmath, bm}
+\begin{document}
+\begin{table}
+\centering
+\vspace{-0.2in}
+\begin{center}
+\setlength{\extrarowheight}{4pt}
+\begin{adjustbox}{width=0.8\textwidth}
+\begin{tabular}{*{4}{c|}}
+\multicolumn{2}{c}{} & \multicolumn{2}{c}{Country $j$ (\%$\Delta W_j$)} \\
+\cline{3-4}
+\multicolumn{1}{c}{} &  & $\textbf{s}_j=\textbf{0}$ & $\textbf{s}_j=\boldsymbol{\mu}$ \\
+\cline{2-4}       \multirow{2}*{Country $i$ (\%$\Delta W_i)$}  &
+$\textbf{s}_i=\textbf{0}$ & $(\; 0\% \; , \; 0\% \;) $ & $(\;
+3.7\% \; , \;-1.2\% \;)$ \\ \cline{2-4}
+& $\textbf{s}_i=\boldsymbol{\mu}$ & $(\;
+-1.2\% \; , \;3.7\% \;)$ &  $(\;2.7\% \; , \;2.7\% \;)$ \\ \cline{2-4}
+\end{tabular}
+\end{adjustbox}
+\end{center}
+
+\end{table}
+\end{document}

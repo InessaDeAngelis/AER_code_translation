@@ -1,0 +1,25 @@
+\begin{adjustwidth}{-0.25in}{-0.0in}
+\small
+\begin{tabular}{lccccccccccc}
+\toprule
+& & & \multicolumn{5}{c}{Estimated Parameter} && \phantom{abc} & \phantom{abc} & \\
+\cmidrule{4-8}
+Sector & ISIC4 codes && $\sigma_{k}-1$ && $\frac{\sigma_{k}-1}{\gamma_{k}-1}$ && $\mu_{k}$ && Obs. & \specialcell{\footnotesize Weak \\ Ident. Test} \\
+\midrule Agriculture \& Mining  & 100-1499 && 4.563&& 0.698&& 0.153&&   10,762&3.07\\
+& && \footnotesize( 1.739) && \footnotesize( 0.132) && \footnotesize( 0.089) &&   &   \\ \addlinespace                                                                                                            Food  & 1500-1699 && 2.476&& 0.927&& 0.374&&   17,594&5.01\\
+& && \footnotesize( 0.818) && \footnotesize( 0.050) && \footnotesize( 0.284) &&   &   \\ \addlinespace                                                                                                            Textiles, Leather \& Footwear  & 1700-1999 && 3.256&& 0.685&& 0.210&&  110,925&59.94\\
+& && \footnotesize( 0.297) && \footnotesize( 0.023) && \footnotesize( 0.024) &&   &   \\ \addlinespace                                                                                                            Wood  & 2000-2099 && 2.093&& 0.893&& 0.427&&    5,282&2.12\\
+& && \footnotesize( 1.196) && \footnotesize( 0.191) && \footnotesize( 0.801) &&   &   \\ \addlinespace                                                                                                            Paper  & 2100-2299 && 7.858&& 0.895&& 0.114&&   35,058&2.00\\
+& && \footnotesize( 3.953) && \footnotesize( 0.154) && \footnotesize( 0.177) &&   &   \\ \addlinespace                                                                                                            Petroleum  & 2300-2399 && 2.080&& 1.028&& 0.494&&    3,675&1.53\\
+& && \footnotesize( 1.812) && \footnotesize( 0.200) && \footnotesize( 3.541) &&   &   \\ \addlinespace                                                                                                            Chemicals  & 2400-2499 && 4.738&& 0.913&& 0.193&&  127,946&30.71\\
+& && \footnotesize( 0.496) && \footnotesize( 0.031) && \footnotesize( 0.071) &&   &   \\ \addlinespace                                                                                                            Rubber \& Plastic  & 2500-2599 && 4.025&& 0.664&& 0.165&&  101,730&9.95\\
+& && \footnotesize( 0.791) && \footnotesize( 0.062) && \footnotesize( 0.045) &&   &   \\ \addlinespace                                                                                                            Minerals \& Fabricated Metals  & 2600-2899 && 3.390&& 0.681&& 0.201&&  173,432&20.03\\
+& && \footnotesize( 0.453) && \footnotesize( 0.036) && \footnotesize( 0.035) &&   &   \\ \addlinespace                                                                                                            Machinery  & 2900-3099 && 4.402&& 0.710&& 0.161&&  257,788&19.88\\
+& && \footnotesize( 0.662) && \footnotesize( 0.044) && \footnotesize( 0.034) &&   &   \\ \addlinespace                                                                                                            Electrical \& Optical Equipment  & 3100-3399 && 0.756&& 0.609&& 0.806&&  246,597&19.25\\
+& && \footnotesize( 0.221) && \footnotesize( 0.015) && \footnotesize( 0.238) &&   &   \\ \addlinespace                                                                                                            Transport Equipment \& N.E.C.  & 3400-3800 && 2.156&& 0.514&& 0.238&&  147,772&11.37\\
+& && \footnotesize( 0.462) && \footnotesize( 0.032) && \footnotesize( 0.053) &&   &   \\ \addlinespace                                                                                                            \bottomrule \\ \end{tabular} \vspace{-0.2in} \\
+\footnotesize {\it Notes}. Estimation results of Equation \eqref{eq: FE Estimation}. Standard errors in parentheses. The estimation is conducted with HS10 product-year and firm-product fixed effects.
+All standard errors are simultaneously clustered by product-year and by origin-product, which is akin to the correction proposed by \citet{adao2019shift}.
+The weak identification test statistics is the F statistics from the Kleibergen-Paap Wald test for weak identification of all instrumented variables.
+The test for over-identification is not reported due to the pitfalls of the standard over-identification Sargan-Hansen J test in the multi-dimensional large datasets pointed by \cite{AngrsitEtAl96}.
+\end{adjustwidth}

@@ -1,0 +1,146 @@
+------------------------------------------------------------------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  /Users/ahmadlp/Dropbox/LL2020/Replication_Aug_2023/Stata/logs/8-figure_O1.log
+  log type:  text
+ opened on:   8 Aug 2023, 17:42:58
+
+. 
+. ******************************************
+. 
+. if "$access_to_datamyne" == "yes" {
+. use "./data/temp/colombia_imports_updated_hs.dta", clear
+. keep if CountryofOrigin=="ESTADOS UNIDOS" & ProductHS=="8431490000"
+(17,216,658 observations deleted)
+. 
+. 
+. destring ExchangeRate TariffPercent VATPercent, replace
+ExchangeRate: all characters numeric; replaced as double
+TariffPercent: all characters numeric; replaced as byte
+VATPercent: all characters numeric; replaced as byte
+. collapse (mean) VATPercent TariffPercent ExchangeRate  [aweight = FOBValueUS], by(month year)
+. 
+. save data/internally_generated/figure_O1_a.dta, replace
+file data/internally_generated/figure_O1_a.dta saved
+. }
+
+. 
+. use data/internally_generated/figure_O1_a.dta, clear
+
+. gen date=ym(year, month)
+
+. tsset date
+
+Time variable: date, 564 to 647
+        Delta: 1 unit
+
+. gen Dexc = 100*(log(F12.ExchangeRate) - log(ExchangeRate))
+(12 missing values generated)
+
+. 
+. 
+. generate str3 month_name = cond(month==1 , "JAN", ///
+>                     cond(month==2 ,  "FEB", ///
+>                                 cond(month==3 ,  "MAR", ///
+>                                     cond(month==4 ,  "APR", ///
+>                                     cond(month==5 ,  "MAY", ///
+>                                         cond(month==6 ,  "JUN", ///
+>                                     cond(month==7 ,  "JUL", ///
+>                                         cond(month==8 ,  "AUG", ///
+>                                         cond(month==9 ,  "SEP", ///
+>                                         cond(month==10 , "NOV", ///
+>                                         cond(month==11 , "OCT", ///
+>                                         cond(month==12 , "DEC", ///
+>                                                                                 "." ))))))))))))
+
+. gen zero = 0
+
+. labmask month, values(month_name) 
+
+. twoway (line Dexc month if year==2008, xla(1/12, valuelabel ang(v) noticks) xtitle("") lcolor("193 5 52") lwidth(vthick) ) ///
+>        (line zero month if year==2008, xla(1/12, valuelabel ang(v) noticks) xtitle("") lcolor("251 162 127") lwidth(medium) lpattern(dash)), ///
+>            ytitle("% {&Delta} Exchange Rate", size(large)) legend(off)
+
+.            
+. graph export output/Figure_O1_a.pdf, replace
+file /Users/ahmadlp/Dropbox/LL2020/Replication_Aug_2023/Stata/output/Figure_O1_a.pdf saved as PDF format
+
+. 
+. ********************************************
+. if "$access_to_datamyne" == "yes" {
+. use "./data/temp/colombia_imports_updated_hs.dta", clear
+. keep if CountryofOrigin=="ESTADOS UNIDOS" & ProductHS=="8431490000"
+(17,216,658 observations deleted)
+. 
+. 
+. destring ExchangeRate TariffPercent VATPercent, replace
+ExchangeRate: all characters numeric; replaced as double
+TariffPercent: all characters numeric; replaced as byte
+VATPercent: all characters numeric; replaced as byte
+. collapse (sum) FOBValueUS (mean) VATPercent TariffPercent ExchangeRate, by(Provider month year)
+. gen date=ym(year,month)
+. 
+. sort year Provider date 
+. by year Provider: egen FOBValueUS_total = total(FOBValueUS)
+. replace FOBValueUS=FOBValueUS/FOBValueUS_total
+(6,610 real changes made)
+. 
+. keep if Provider=="CATERPILLARA"  | Provider=="MACHINERYCOR"
+(6,442 observations deleted)
+. 
+. keep Provider month date FOBValueUS year
+. reshape wide FOBValueUS, j(Provider) i(date) string
+(j = CATERPILLARA MACHINERYCOR)
+
+Data                               Long   ->   Wide
+-----------------------------------------------------------------------------
+Number of observations              168   ->   84          
+Number of variables                   5   ->   5           
+j variable (2 values)          Provider   ->   (dropped)
+xij variables:
+                             FOBValueUS   ->   FOBValueUSCATERPILLARA FOBValueUSMACHINERYCOR
+-----------------------------------------------------------------------------
+. save data/internally_generated/figure_O1_b.dta, replace
+file data/internally_generated/figure_O1_b.dta saved
+. }
+
+. 
+. use data/internally_generated/figure_O1_b.dta, clear
+
+. generate str3 month_name = cond(month==1 , "JAN", ///
+>                     cond(month==2 ,  "FEB", ///
+>                                 cond(month==3 ,  "MAR", ///
+>                                     cond(month==4 ,  "APR", ///
+>                                     cond(month==5 ,  "MAY", ///
+>                                         cond(month==6 ,  "JUN", ///
+>                                     cond(month==7 ,  "JUL", ///
+>                                         cond(month==8 ,  "AUG", ///
+>                                         cond(month==9 ,  "SEP", ///
+>                                         cond(month==10 , "NOV", ///
+>                                         cond(month==11 , "OCT", ///
+>                                         cond(month==12 , "DEC", ///
+>                                                                                 "." ))))))))))))
+
+. 
+. labmask month, values(month_name) 
+
+. twoway (lowess FOBValueUSCATERPILLARA month if year==2008, xla(1/12, valuelabel ang(v) noticks) xtitle("") lcolor("251 222 6") lwidth(vthick) bwidth
+> (.4)) ///
+>        (lowess FOBValueUSMACHINERYCOR month if year==2008, xla(1/12, valuelabel ang(v) noticks) xtitle("") lcolor(midblue) lwidth(vthick)  bwidth(.4
+> )), ///
+>            legend(ring(1) pos(12) row(1) order(1 "CATERPILLAR" 2 "MACHINERY CORP AMERICA" )) ytitle("Export Share",  size(large))
+
+. 
+. graph export output/Figure_O1_b.pdf, replace    
+file /Users/ahmadlp/Dropbox/LL2020/Replication_Aug_2023/Stata/output/Figure_O1_b.pdf saved as PDF format
+
+. *****************************************
+. 
+. *erase "./data/temp/colombia_imports_updated_hs.dta"
+. graph close
+
+. log close   
+      name:  <unnamed>
+       log:  /Users/ahmadlp/Dropbox/LL2020/Replication_Aug_2023/Stata/logs/8-figure_O1.log
+  log type:  text
+ closed on:   8 Aug 2023, 17:43:05
+------------------------------------------------------------------------------------------------------------------------------------------------------

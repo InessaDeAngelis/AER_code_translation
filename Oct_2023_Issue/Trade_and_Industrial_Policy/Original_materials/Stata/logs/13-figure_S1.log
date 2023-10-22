@@ -1,0 +1,122 @@
+------------------------------------------------------------------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  /Users/ahmadlp/Dropbox/LL2020/Replication_Aug_2023/Stata/logs/13-figure_S1.log
+  log type:  text
+ opened on:   8 Aug 2023, 18:20:14
+
+. 
+. * load Penn World Table (year 2011)
+. use data/penn_world_tables/pwt90
+
+. keep if year==2011
+(0 observations deleted)
+
+. 
+. gen ly= log(rgdpo/emp)
+(13 missing values generated)
+
+. local US = ly[173]
+
+. replace ly = ly - `US'
+(169 real changes made)
+
+. lab var ly "Real GDP/pc relative to US (log)"
+
+. 
+. gen trade =0.5*( csh_x-  csh_m)
+
+. gen lambda_ii= 1 - trade
+
+. lab var lambda_ii "domestic expinditure share"
+
+. 
+. **** Preidcted Y/L: Krugman (1980) **************
+. gen ly_K= 0.36*log(emp) - 0.36*(lambda_ii) + log(ctfp)
+(66 missing values generated)
+
+. 
+. local US = ly_K[173]
+
+. replace ly_K = ly_K - `US'
+(116 real changes made)
+
+. lab var ly_K "Real GDP/pc predicted by Krugman (log)"
+
+. 
+. ****** Preidcted Y/L: Krugman (1980) + Domestic trade frictions *********
+. 
+. gen ly_DTF= 0.19*log(emp) - 0.36*(lambda_ii) + log(ctfp)
+(66 missing values generated)
+
+. 
+. local US = ly_DTF[173]
+
+. replace ly_DTF = ly_DTF - `US'
+(116 real changes made)
+
+. lab var ly_DTF "Real GDP/pc predicted by Krugman + domestic trade frictions (log)"
+
+. 
+. **** ****** Preidcted Y/L: Krugman (1980) + Domestic trade frictions + estimated scale elasticity *********
+. gen ly_LL= 0.04*log(emp) - 0.36*(lambda_ii) + log(ctfp)
+(66 missing values generated)
+
+. 
+. local US = ly_LL[173]
+
+. replace ly_LL = ly_LL - `US'
+(116 real changes made)
+
+. lab var ly_LL "Real GDP/pc predicted by Krugman + domestic trade frictions + estimated scale elasticity (log)"
+note: label truncated to 80 characters
+
+. 
+. 
+. gen lemp=log(emp)
+(13 missing values generated)
+
+. 
+. 
+. graph twoway ///
+> (scatter ly_K lemp, mcolor($Cherry) msymbol(O)) (lfit ly_K lemp, lwidth(medthick) lpattern(dash) lcolor($Cherry ) ) ///
+> (scatter ly lemp if !missing(ly_K), mcolor($Blueberry ) msymbol(Sh)) (lfit ly lemp if !missing(ly_K), lwidth(medthick) lpattern(dash) lcolor($Bluebe
+> rry )), ///
+>  xlabel(-2(2)6) xtitle("Population (log)") title(Standard Krugman Model) ///
+> legend(pos(4) col(1) size(medium) ring(0) order(1 "model prediction" 3 "data") ) 
+
+. graph export "output/Figure_S1_A.pdf", replace
+file /Users/ahmadlp/Dropbox/LL2020/Replication_Aug_2023/Stata/output/Figure_S1_A.pdf saved as PDF format
+
+. 
+. 
+. graph twoway ///
+> (scatter ly_LL lemp, mcolor($TomaCherryto ) msymbol(O)) (lfit ly_LL lemp, lwidth(medthick) lpattern(dash)  lcolor($Cherry )) ///
+> (scatter ly lemp if !missing(ly_LL), mcolor($Blueberry ) msymbol(Sh)) (lfit ly lemp if !missing(ly_LL), lwidth(medthick) lpattern(dash) lcolor($Blue
+> berry )), ///
+> xlabel(-2(2)6) xtitle("Population (log)")  title(Krugman Model + domestic trade frictions)  ///
+> legend(pos(4) col(1) size(medium) ring(0) order(1 "model prediction" 3 "data") ) 
+
+. graph export "output/Figure_S1_B.pdf", replace
+file /Users/ahmadlp/Dropbox/LL2020/Replication_Aug_2023/Stata/output/Figure_S1_B.pdf saved as PDF format
+
+. 
+. 
+. graph twoway ///
+> (scatter ly_DTF lemp, mcolor($Cherry ) msymbol(O)) (lfit ly_DTF lemp, lwidth(medthick) lpattern(dash)  lcolor($Cherry )) ///
+> (scatter ly lemp if !missing(ly_DTF), mcolor($Blueberry ) msymbol(Sh)) (lfit ly lemp if !missing(ly_DTF), lwidth(medthick) lpattern(dash) lcolor($Bl
+> ueberry )), ///
+> xlabel(-2(2)6) xtitle("Population (log)") title(Krugman Model + domestic trade frictions + estimated scale elasticity) ///
+> legend(pos(4) col(1) size(medium) ring(0) order(1 "model prediction" 3 "data") ) 
+
+. graph export "output/Figure_S1_C.pdf", replace
+file /Users/ahmadlp/Dropbox/LL2020/Replication_Aug_2023/Stata/output/Figure_S1_C.pdf saved as PDF format
+
+. 
+. graph close
+
+. log close   
+      name:  <unnamed>
+       log:  /Users/ahmadlp/Dropbox/LL2020/Replication_Aug_2023/Stata/logs/13-figure_S1.log
+  log type:  text
+ closed on:   8 Aug 2023, 18:20:17
+------------------------------------------------------------------------------------------------------------------------------------------------------
