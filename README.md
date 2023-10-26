@@ -17,6 +17,10 @@ The repo is organized by journal issue, with all the September 2023 materials lo
   - [A Road to Efficiency through Communication and Commitment](https://www.aeaweb.org/articles?id=10.1257/aer.20171014)
   
   - [Second-Best Fairness: The Trade-off between False Positives and False Negatives](https://www.aeaweb.org/articles?id=10.1257/aer.20211015)
+  
+  - ~~[Market Structure, Oligopsony Power, and Productivity](https://www.aeaweb.org/articles?id=10.1257/aer.20210383)~~ (data access issues)
+  
+  - ~~[The Macroeconomics of the Greek Depression](https://www.aeaweb.org/articles?id=10.1257/aer.20210864)~~ (republication package unavailable)
 
 `October 2023 Issue` contains the following articles and materials located in their own sub-folder: 
 
@@ -25,10 +29,12 @@ The repo is organized by journal issue, with all the September 2023 materials lo
   - [Intrinsic Information Preferences and Skewness](https://www.aeaweb.org/articles?id=10.1257/aer.20171474)
   
   - [A Signal to End Child Marriage: Theory and Experimental Evidence from Bangladesh](https://www.aeaweb.org/articles?id=10.1257/aer.20220720)
-
-**Note**: [The Macroeconomics of the Greek Depression](https://www.aeaweb.org/articles?id=10.1257/aer.20210864) (Sep 2023) and [Matching Mechanisms for Refugee Resettlement](https://www.aeaweb.org/articles?id=10.1257/aer.20210096) (Oct 2023) articles are not included because their replication packages are unavailable. 
-
-[Market Structure, Oligopsony Power, and Productivity](https://www.aeaweb.org/articles?id=10.1257/aer.20210383) (Sep 2023), [The Behavioral Foundations of Default Effects: Theory and Evidence from Medicare Part D](https://www.aeaweb.org/articles?id=10.1257/aer.20210013) (Oct 2023) [Profits, Scale Economies, and the Gains from Trade and Industrial Policy](https://www.aeaweb.org/articles?id=10.1257/aer.20210419) (Oct 2023) were also removed due to data access issues. 
+  
+  - ~~[Matching Mechanisms for Refugee Resettlement](https://www.aeaweb.org/articles?id=10.1257/aer.20210096)~~ (republication package unavailable)
+  
+  - ~~[Profits, Scale Economies, and the Gains from Trade and Industrial Policy](https://www.aeaweb.org/articles?id=10.1257/aer.20210419)~~ (data access issues)
+  
+  - ~~[The Behavioral Foundations of Default Effects: Theory and Evidence from Medicare Part D](https://www.aeaweb.org/articles?id=10.1257/aer.20210013)~~ (data access issues)
 
 ## Instructions
 Please translate the STATA code into R or Python (pick the language you are most comfortable in) using the LLMs as much as possible. Then, clearly label the translated code documents with your name and add the file into the `Translated code` folder within each article folder. Throughout the process, take notes about which aspects of the translation the LLMs did well and poorly and identify issues you discovered and fixed during the translation process. 
