@@ -8,7 +8,7 @@ The goal of this project is to figure out if there are errors in the STATA code 
 ## Repo Structure
 The repo is organized by journal issue, with all the August 2023 materials located in the `2023-08_Issue` folder, September 2023 materials located in the `2023-09_Issue` folder, and the October 2023 materials located in the `2023-10_Issue` folder.
 
-`2023-09_Issue` contains the following articles and materials located in their own sub-folder: 
+`2023-08_Issue` contains the following articles and materials located in their own sub-folder: 
 
   - [Does Identity Affect Labor Supply?](https://www.aeaweb.org/articles?id=10.1257/aer.20211826)
   
