@@ -1,0 +1,1341 @@
+\documentclass[12pt]{article}
+\usepackage{amsfonts,dsfont,amssymb,amsmath,amsthm,bbm,graphicx,hyperref}
+\usepackage[=1in,bottom=1in,left=1in,right=1in]{geometry} % the layout package
+\setlength{\parindent}{2em}
+\usepackage{caption}
+\usepackage{color}
+\usepackage{verbatim}
+\usepackage{titlesec} % customize section title
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{framed}
+\usepackage{booktabs}
+\usepackage{threeparttable}
+\usepackage{forloop}
+\usepackage[capposition=top]{floatrow}
+\usepackage{lscape}
+\usepackage{setspace}
+\usepackage{tocloft}
+%\usepackage{natbib}
+\usepackage{ifthen}
+%\usepackage{subfig}
+\usepackage{rotating}
+\usepackage{tabu}
+\usepackage[labelfont=bf]{caption}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage[space]{grffile}
+\hypersetup{pdfborder = {0 0 0},colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue}
+\usepackage{siunitx}
+\usepackage{titlesec}
+\titleformat{\section}
+{\normalfont\Large\bfseries}
+{\thesection.}{0.5em}{}
+\titleformat{\subsection}
+{\normalfont\normalsize\bfseries}
+{\thesubsection.}{0.5em}{}
+\titleformat{\subsubsection}
+{\normalfont\normalsize\itshape}
+{\thesubsubsection.}{0.5em}{}
+
+\usepackage[longnamesfirst]{natbib}
+\usepackage{multibib}
+\newcites{sec}{References}
+\sisetup{
+         group-digits = integer,
+         group-four-digits = true,
+         group-separator = {,},
+         per-mode = fraction,
+         input-digits = 0123456789(),
+         table-align-text-post=false,
+        }
+
+% New Command: Math Formulation
+\newcommand{\e}[1]{\exp\left\{#1\right\}}
+\newcommand{\pie}{^{\prime}}
+\newcommand{\prob}[1]{\mathbb{P}\left[#1\right]}
+\newcommand{\cprob}[2]{\mathbb{P}\left[#1|#2\right]}
+\newcommand{\expt}[1]{\mathbb{E}\left[#1\right]}
+\newcommand{\cexpt}[2]{\mathbb{E}\left[#1|#2\right]}
+\newcommand{\texpt}[2]{\mathbb{E}_{#1}\left[#2\right]}
+\newcommand{\var}[1]{\mathbb{V}\left[#1\right]}
+\newcommand{\cvar}[2]{\mathbb{V}\left[#1|#2\right]}
+\newcommand{\hatmathcal}[1]{\widehat{\mathcal{#1}}}
+\newcommand{\indSimp}[1]{\mathds{1}\left(#1\right)}
+\newcommand{\indComp}[2]{\mathds{1}_{#1}\left(#2\right)}
+\newcommand{\bo}[1]{\textsl{O}\left(#1\right)}
+\newcommand{\lo}[1]{\textsl{o}\left(#1\right)}
+\newcommand{\bop}[1]{\textsl{$ O_p $}\left(#1\right)}
+\newcommand{\lop}[1]{ \textsl{$ o_p $} \left(#1\right)}
+\newcommand{\sumSimp}[1]{\sum_{#1}}
+\newcommand{\sumComp}[3]{\sum_{#1=#2}^{#3}}
+
+
+% New Command: Formatic Item
+\newcommand{\titleitem}[1]{\item \textbf{#1}\par}
+\newcommand{\ee}{\nonumber\\}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\NoNumSection}[1]{\par \noindent\textbf{#1}.}
+
+\newcommand{\monetary}{\ensuremath{\mathrm{m}}}
+\newcommand{\control}{\ensuremath{\mathrm{y}}}
+
+
+\newtheorem{theorem}{\textit{Theorem}}
+\newtheorem{proposition}[theorem]{\textit{Proposition}}
+\newtheorem{lemma}{\textit{Lemma}}
+\newtheorem{corollary}{\textit{Corollary}}
+\newtheorem{definition}{\textit{Definition}}
+\newtheorem{assumption}{\bf \sc Assumption}
+\newtheorem*{assumption1}{Assumption 1}
+\newtheorem*{assumption1a}{Assumption 1a}
+\newtheorem*{assumption1b}{Assumption 1b}
+\newtheorem*{assumption1c}{Assumption 1c}
+
+
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+
+
+
+
+\usepackage{lineno}
+\usepackage{enumerate}
+\usepackage{sgamevar}
+\usepackage{caption}
+\usepackage{bbm}
+\usepackage{subcaption}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\setlength{\rotFPtop}{0pt plus 1fil}
+\usepackage{float}
+\usepackage{placeins}
+\usepackage{etoolbox}
+\usepackage{soul}
+\newcommand{\todo}[1]{{\bf \hl{[TODO: }\hl{#1}\hl{]}}} % highlight TODOs
+% \usepackage{bigfoot}
+\usepackage{tikz} % for timeline
+\usetikzlibrary{shadows} % LATEX and plain TEX when using TikZ
+\usetikzlibrary[shadows] % ConTEXt when using TikZ
+\usetikzlibrary{decorations, positioning, decorations.pathreplacing, calc}
+\usepackage{ragged2e}
+
+% % % % % % % % % % % % % % Numbering % % % % % % % % % % % % % %
+\begin{document}
+
+
+\centering{\Large Tables and Figures of The Micro Anatomy of Macro Consumption Adjustments}
+
+\flushleft
+\justifying
+
+This \LaTeX  file compiles all the figures and tables (including the Online Appendix) of the paper.  Note: the references to the text don't work.
+
+%\newpage 
+
+\bigskip
+
+\flushleft
+\justifying
+
+\begin{spacing}{1.5}
+
+\begin{figure}[H] \centering
+	\medskip
+	\begin{tabular}{ccc}
+		\small{(A) Euro Crisis} & \small{(B) Emerging-market Crises} & \small{(C) Great Depression} \\         
+    \includegraphics[scale=.26]{empirical/output/figure1_a.pdf} 
+& \includegraphics[scale=.26]{empirical/output/figure1_b.pdf} 
+&  \includegraphics[scale=.26]{empirical/output/figure1_c.pdf} 
+	\end{tabular}
+		\caption{Selected Episodes of Aggregate Consumption Adjustment During Crises \label{fig_ss}}
+	\medskip
+	\begin{flushleft} \footnotesize \textit{Notes}: This figure shows the dynamics of real aggregate private consumption and real GDP for selected crises. Panel (A) shows the average of Greece, Italy, Ireland, Portugal, and Spain for the Euro crisis that started in 2008. Data source: WDI. Panel (B) shows the average of a set of 24 emerging market recession episodes since the 1980s that occurred during episodes of ``systemic sudden stop,'' identified by \cite{calvo2016macroeconomics}. Data source: WDI. Panel (c) shows the average of 16 Great Depression episodes starting in 1929, identified by \cite{barro2006rare}. Data source: \cite{barro2008consumption}. In all episodes, consumption and income are set to 100 at the peak before the recession.
+	\end{flushleft}
+\end{figure}
+
+\begin{figure}[H]
+{\bf Euro Crisis}\\\medskip
+\begin{tabular}{ccc}
+{\small{}{(a) Italy } } & {\small{}{(b) Spain} } \vspace{.5em} \\
+\includegraphics[scale=.82]{empirical/output/figure2_a.pdf} &
+\includegraphics[scale=.82]{empirical/output/figure2_b.pdf}
+\end{tabular}\\
+
+{\bf EMs Sudden Stops}\\\medskip
+\begingroup
+\setlength{\tabcolsep}{1pt} 
+\renewcommand{\arraystretch}{1}
+\begin{tabular}{ccc}
+{\footnotesize{}{(a) Mexico '94} } & {\footnotesize{}{(b) Mexico '08} } & { \footnotesize{}{(c) Peru '08} }\vspace{.5em} \tabularnewline
+\includegraphics[scale=.82]{empirical/output/figure2_c.pdf} & 
+\includegraphics[scale=.82]{empirical/output/figure2_d.pdf}   &
+\includegraphics[scale=.82]{empirical/output/figure2_e.pdf}
+\end{tabular}
+\endgroup
+\caption{Episodes Included in the Empirical Analysis: Macro-consumption Adjustment
+\label{fig_episodes}}
+\medskip{}
+
+\raggedright{}\textit{\footnotesize{}Notes}{\footnotesize{}:
+All variables are in per capita terms and log difference with respect to trend. Output refers to GDP, Consumption refers to private consumption expenditure; nondurable consumption includes private consumption expenditure on nondurable goods and services. Further details in Appendix \ref{data_appendix}. Data sources: OECD, FRED, Bank of Italy, INE Spain, INEGI Mexico, and INEI Peru. }{\footnotesize\par}
+\end{figure}
+
+\begin{table}[H]
+\begin{centering}
+\caption{Consumption-income Elasticities: Average and Top-income Households
+{\label{tab_elasticities_incomedecile_residualized}}}
+\vspace*{-0.2em}
+ %
+ \resizebox{\textwidth}{!}{
+\begin{tabular}{lll >{\centering\arraybackslash} p{2.0cm}  >{\centering\arraybackslash} p{2cm} >{\centering\arraybackslash} p{.2cm} >{\centering\arraybackslash} p{2cm} >{\centering\arraybackslash} p{2cm} >{\centering\arraybackslash} p{2cm} >{\centering\arraybackslash} p{.0cm} >{\centering\arraybackslash} p{1.3cm} >{\centering\arraybackslash} p{.0cm}}
+\toprule
+ &  & & \multicolumn{2}{c}{Euro Crisis}  & \hspace{.3em} & \multicolumn{3}{c}{Emerging-market Crises}  & \hspace{.3em} & \multirow{3}{*}{Average}
+\\ \cline{4-5} \cline{7-9} \vspace{-.9em} \\
+ & &  & Italy & \hspace{.3em} Spain \hspace{.3em} & \hspace{.3em} & Mexico `94  & Mexico `08 & Peru   \hspace{.3em} \tabularnewline
+\hline
+\vspace{-.9em} \\
+\multicolumn{2}{l}{\textit{a. All Households}} \vspace{.3em} \\
+\input empirical/output/table1_a
+\midrule
+\multicolumn{3}{l}{\textit{b. Households with Liquid Assets}} \vspace{.5em} \\
+\input empirical/output/table1_b
+\hline
+\vspace{-.9em} \\
+\input empirical/output/table_baselineN
+\toprule
+\end{tabular} } \\
+
+\par\end{centering}
+\medskip{}
+
+\raggedright{}\textit{\footnotesize{}Notes}{\footnotesize{}: Income (Y) is defined as monetary after-tax nonfinancial income. Consumption (C) is defined as consumption of nondurable goods and services. Both variables are deflated by the CPI and residualized from households' observable characteristics and time trends (see empirical model \eqref{residual} in Appendix \ref{data_appendix} for details). Elasticities are calculated as the ratio of the log change in consumption to the log change in income. Top-income households are those in the highest decile of residualized income. Households with liquid assets are those with liquid assets greater than a country-specific threshold. Further details in Appendix \ref{data_appendix}. Data sources:  SHIW-BI Italy, EPF-INE Spain, ENIGH-INEGI Mexico, ENAHO-INEI Peru. }{\footnotesize\par}
+
+\end{table}
+
+
+\begin{figure}[H]
+\begin{tabular}{cc}
+\multicolumn{2}{c}{(a) Euro Crisis} \vspace{.4em}  \\
+{\small{}{Italy} } & {\small{}{Spain} } \tabularnewline
+\includegraphics[scale=1.2]{empirical/output/figure3_a.pdf} &
+\includegraphics[scale=1.2]{empirical/output/figure3_b.pdf}   \\
+\multicolumn{2}{c}{(b) Emerging-market Crises} \vspace{.4em} \\
+{\small{}{Mexico} } & {\small{}{Peru} }\tabularnewline
+\includegraphics[scale=1.2]{empirical/output/figure3_c.pdf} &
+\includegraphics[scale=1.2]{empirical/output/figure3_d.pdf}   \\
+\end{tabular}\caption{Consumption-income Elasticities Across the Income Distribution
+\label{fig_elasticities_incomedecile_residualized}}
+\medskip{}
+\raggedright{}\textit{\footnotesize{}Notes}{\footnotesize{}: This figure shows consumption-income elasticities for different deciles of residualized income on the horizontal axis. Income is defined as monetary after-tax nonfinancial income. Consumption is defined as consumption of nondurable goods and services. Income and consumption are deflated by the CPI and residualized from households' observable characteristics and time trends (see empirical model \eqref{residual} in Appendix \ref{data_appendix} for details). Dots correspond to observed elasticities, the
+solid line is the locally weighted smoothing of observed elasticities, and the shaded area shows the 90\% confidence intervals
+of the elasticities. Elasticities are calculated as the ratio of the log change in consumption to the log change
+in income. Confidence intervals are computed using 2,000 bootstrap replications. Elasticities for Mexico are the simple average of its two episodes in the sample (1994 and 2008).  Further details in Appendix \ref{data_appendix}. Data sources: SHIW-BI Italy, EPF-INE Spain, ENIGH-INEGI Mexico, ENAHO-INEI Peru.}{\footnotesize\par}
+\end{figure}
+
+\begin{table}[H]
+\begin{centering}
+\caption{Consumption-income Elasticities by Household Characteristics
+{\label{tab_smoothers_main}}}
+\vspace*{-0.2em}
+ %
+ \resizebox{\textwidth}{!}{
+\begin{tabular}{lll >{\centering\arraybackslash} p{2.0cm}  >{\centering\arraybackslash} p{2cm} >{\centering\arraybackslash} p{.2cm} >{\centering\arraybackslash} p{2cm} >{\centering\arraybackslash} p{2cm} >{\centering\arraybackslash} p{2cm} >{\centering\arraybackslash} p{.0cm} >{\centering\arraybackslash} p{1.3cm} >{\centering\arraybackslash} p{.0cm}}
+\toprule
+ &  & & \multicolumn{2}{c}{Euro Crisis}   & \hspace{.3em} & \multicolumn{3}{c}{Emerging-market Crises} & \hspace{.3em} & \multirow{3}{*}{Average}
+\\ \cline{4-5} \cline{7-9} \vspace{-.9em} \\
+ & & & Italy & \hspace{.3em} Spain \hspace{.3em}    & \hspace{.3em} & Mexico `94  & Mexico `08 & Peru \hspace{.3em} \tabularnewline
+\hline
+\vspace{-.9em} \\
+\multicolumn{2}{l}{\textit{a.  By Holdings of Illiquid Assets}} \vspace{.3em} \\
+\multicolumn{2}{l}{\textit{Firm Ownership}} \vspace{.3em} \\
+\input empirical/output/table2_a
+\vspace{-.9em} \\
+\multicolumn{2}{l}{\textit{Home Ownership}} \vspace{.3em} \\
+\input empirical/output/table2_b
+\hline
+\vspace{-.9em} \\
+\multicolumn{2}{l}{\textit{b.  By Other Household Characteristics}} \vspace{.3em} \\
+\multicolumn{2}{l}{\textit{Age Group}} \vspace{.3em} \\
+\input empirical/output/table2_c
+\vspace{-.9em} \\
+\multicolumn{2}{l}{\textit{Education Level}} \vspace{.3em} \\
+\input empirical/output/table2_d
+\vspace{-.9em} \\
+\multicolumn{2}{l}{\textit{Geographic Location}} \vspace{.0em} \\
+\input empirical/output/table2_e
+\vspace{-.9em} \\
+\multicolumn{2}{l}{\textit{Sector}} \vspace{.3em} \\
+\input empirical/output/table2_f
+\vspace{-.9em} \\
+\multicolumn{2}{l}{\textit{Full-Time Employee}} \vspace{.3em} \\
+\input empirical/output/table2_g
+\hline
+\vspace{-.9em} \\
+\input empirical/output/table_baselineN
+\toprule
+\end{tabular} } \\
+ %\vspace*{0.5em}
+
+\par\end{centering}
+\medskip{}
+\captionsetup{font={small}, margin={0cm,0cm}, justification=justified}
+\raggedright{}\textit{\footnotesize{}Notes}{\footnotesize{}: This table shows consumption-income elasticities by ownership, age, education, geography, sector, and employment. Income is defined as monetary after-tax nonfinancial income. Consumption is defined as consumption of nondurable goods and services. Both variables are deflated by the CPI and residualized from households' observable characteristics and time trends (see empirical model \eqref{residual} in Appendix \ref{data_appendix} for details). Elasticities are calculated as the ratio of the log change in consumption to the log change in income. Age, education, and sector are for the household head. Categories are constructed such that they are comparable across countries. Industry is composed of manufacturing and construction sectors.  Full-time employees are for households with at least one paid employee working 35 or more hours per week.  Further details in Appendix \ref{data_appendix}. Data sources: SHIW-BI Italy, EPF-INE Spain, ENIGH-INEGI Mexico, ENAHO-INEI Peru.}{\footnotesize\par}
+\end{table}
+
+
+\begin{figure}[H]
+\caption{Consumption-income Elasticities: Italy and U.S. Business Cycles}\label{ita_us_buscycle}
+\begin{tabular}{cc}
+\multicolumn{2}{c}{\includegraphics[scale=1.3]{empirical/output/figure4.pdf}}
+\end{tabular} \\
+\medskip{}
+\raggedright{}\textit{\footnotesize{}Notes}{\footnotesize{}: This figure shows consumption-income  elasticities ($\beta_q$) estimated using the following specification: $\Delta \ln c_{q,t} = \alpha_q + \beta_q \Delta \ln y_{q,t} + \varepsilon_{q,t}$ for the U.S. and Italian business cycles. Vertical lines correspond to the estimates' confidence intervals at the 90\% level. Dotted horizontal lines correspond to the estimates using aggregate data from National Acccounts. Details in Section $\ref{add_results}$. Data  sources: SHIW-BI Italy and CEX-US based on \citet{dauchy2020RED}.}{\footnotesize\par}
+\end{figure}
+
+
+\begin{table}[H]
+\begin{centering}
+\caption{Model Parameters}
+\input{"model/output/table3"}
+\label{c_param}
+\end{centering}
+\medskip{}
+
+\captionsetup{font={small}, margin={0cm,0cm}}\raggedright{}\textit{\footnotesize{}Notes}{\footnotesize{}: This table shows the parameter values of the model calibration for Italy.
+  }{\footnotesize\par}
+\end{table}
+
+
+\begin{table}[H]
+\begin{centering}
+\caption{Targeted and Untargeted Moments}
+\input{"model/output/table4"}
+\label{tab_moments}
+\end{centering}
+\medskip{}
+
+\captionsetup{font={small}, margin={0cm,0cm}, justification=justified}\raggedright{}\textit{\footnotesize{}Notes}{\footnotesize{}: This table compares model-simulated moments with those observed in the data. Wealth-to-income ratio refers to the average ratio of liquid wealth to annual income. Hand-to-mouth share refers to the share of households with liquid assets that are less than 2 weeks of income. Data source: SHIW-BI Italy.
+  }{\footnotesize\par}
+\end{table}
+
+
+\begin{figure}[H]
+\caption{Consumption-income Elasticities under the PI View Crisis Experiment}
+\label{fig:pih_cie}
+\begin{tabular}{cc}
+(a) Baseline & (b) Heterogeneous Income Loadings \\
+\includegraphics[scale=0.4]{model/output/figure5_a_figure7_a.pdf} &
+\includegraphics[scale=0.4]{model/output/figure5_b.pdf} \\
+(c) Wealth Revaluations & (d) Uncertainty Shock \\
+\includegraphics[scale=0.4]{model/output/figure5_c.pdf} &
+\includegraphics[scale=0.4]{model/output/figure5_d.pdf}
+\end{tabular} \smallskip \\
+\raggedright{}\textit{\footnotesize{}Notes}{: \footnotesize{This figure shows the consumption-income elasticities for different income deciles in the Italian crisis (described in Section \ref{sec_empirical}) and in the crisis experiments of the model calibrated for Italy (described in Section \ref{sec_pih}). Panel (a) shows  the elasticities in the baseline model.  Panel (b) shows the elasticities in the model extended to include heterogeneous income processes.  Panel (c) shows the elasticities in the model extended with asset revaluations.  Panel (d) shows the elasticities in the model extended with homogeneous and heterogeneous uncertainty shocks.  Elasticities are computed using average income and consumption by decile, and are defined as the ratio of the log change in consumption to the log change in income. The dashed line corresponds to the locally weighted smoothed data. Further details in Appendix \ref{data_appendix}.
+Data sources: SHIW-BI Italy.
+}}{\footnotesize\par}
+\end{figure}
+
+
+\begin{figure}[H]
+\caption{Consumption-income Elasticities in the PI View Crisis Experiment with Nonhomotheticities}
+\label{fig:cyelast_extensions_nh}
+\begin{tabular}{cc}
+(a) Italy & (b) Mexico \\
+\includegraphics[scale=0.4]{model/output/figure6_a.pdf} &
+\includegraphics[scale=0.4]{model/output/figure6_b.pdf}
+\end{tabular} \smallskip \\
+\raggedright{}\textit{\footnotesize{}Notes}{: \footnotesize{
+This figure shows the average consumption-income elasticities for different income deciles in the Italian and Mexican crises (described in Section \ref{sec_empirical}) and in the PI crisis experiment calibrated for Italy and Mexico in the baseline model and in the model extended with nonhomothetic preferences (described in Section \ref{sec_pih}). Elasticities are computed using the average income and consumption by decile, and are defined as the ratio of the log change in consumption to the log change in income. The dashed line corresponds to the locally weighted smoothed data. Further details in Appendices \ref{data_appendix} and \ref{model_ext}. Data sources: SHIW-BI Italy, ENIGH-INEGI Mexico.}}{\footnotesize\par}
+\end{figure}
+
+
+\begin{figure}[H]
+\caption{Consumption-income Elasticities in the PI View and CT View Crisis Experiments}
+\label{fig: mitshock}
+\begin{tabular}{cc}
+(a) PI View Experiment & (b) CT View Experiment \\
+\includegraphics[scale=0.4]{model/output/figure5_a_figure7_a.pdf} &
+\includegraphics[scale=0.4]{model/output/figure7_b_figureD15_a.pdf} \\
+\end{tabular}  \smallskip \\
+\raggedright{}\textit{\footnotesize{}Notes}{: \footnotesize{ This figure shows the consumption-income elasticities for different income deciles in the Italian crisis (described in Section \ref{sec_empirical}) and in the crisis experiments of the model calibrated for Italy (described in Sections \ref{sec_pih} and \ref{sec_otpol}). Panel (a) shows the permanent-income view experiment and Panel (b) the credit-tightening view experiment. Elasticities are computed using average income and consumption by decile, and are defined as the ratio of the log change in consumption to the log change in income. The dashed line corresponds to the locally weighted smoothed data. Further details in Appendix \ref{data_appendix}.
+Data sources: SHIW-BI Italy.}}{\footnotesize\par}
+\end{figure}
+
+\begin{figure}[H]
+\caption{Policy Analysis: Consumption Responses to Fiscal Transfers}
+\label{fig: policy1}
+\centering
+\includegraphics[scale=0.5]{model/output/figure8.pdf} \\
+\flushleft\raggedright{}\textit{\footnotesize{}Notes}{: \footnotesize{This figure shows the marginal propensity to consume (MPC) from a one-time transfer across the income distribution. The dashed blue line corresponds to MPCs when the policy is conducted in the steady state,  \textcolor{black}{ maroon diamonds to MPCs when the policy is conducted during a temporary aggregate income shock without credit tightening,}  the solid orange line to MPCs when the policy is conducted during the PI view crisis experiment, and the gray line to MPCs when the policy is conducted during the CT view crisis experiment.}}{\footnotesize\par}
+\end{figure}
+
+
+\end{spacing}
+
+\newpage
+
+\begin{spacing}{1.5}
+
+\setcounter{section}{0}
+\renewcommand{\thesection}{\Alph{section}}
+
+\numberwithin{table}{section}
+\setcounter{table}{0}
+\numberwithin{figure}{section}
+\setcounter{figure}{0}
+
+\appendix
+
+\bigskip
+\begin{center}
+ \bf\Large Appendices
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Additional Empirical Results}
+
+
+\begin{figure}[H]
+\setlength{\tabcolsep}{1pt}
+\renewcommand{\arraystretch}{1} 
+\begin{tabular}{ccc}
+{\footnotesize{}{(a) Episodes in Sample of Analysis} } & {\footnotesize{}{(b) Sudden Stops} } &  { \footnotesize{}{(c) Financial Crises} }  \vspace{.5em} \tabularnewline
+\includegraphics[scale=.82]{empirical/output/figureB1_a}   &
+\includegraphics[scale=.82]{empirical/output/figureB1_b}   &
+\includegraphics[scale=.82]{empirical/output/figureB1_c} 
+\end{tabular}
+\caption{Output Dynamics following Crisis Episodes
+\label{crises}}
+\medskip{}
+\raggedright{}\textit{\footnotesize{}Notes}{\footnotesize{}: Panel (a) ``Episodes in Sample of Analysis" estimates the impact on real GDP for Italy, Spain, Mexico, and Peru for 1988-2019 for the five crisis episodes.  Panel (b) ``Sudden Stops" is for the 32 emerging markets in \cite{calvo2006sudden} for 1980-2004 where the crisis year is the year following the peak in output.  Panel (c) ``Financial Crises" replicates \cite{cerra2008growth} Figure 4 for the impact on real GDP from banking crises for their full sample of countries for 1974-2001. This estimation uses the following model: $g_{it} = a_i + \sum_{j = 1}^4 \beta_j g_{i,t-j} + \sum_{s=0}^4 \delta_s D_{i,t-s} + \varepsilon_{it}$ for country $i$ in year $t$ where $a$ is a country fixed effect, $g$ is the percentage change in real GDP, and $D$ is a dummy variable indicating the first year of a crisis. The impulse response shows the estimated percentage point impact on real GDP from a crisis using the estimated coefficients. The dashed lines show a one standard deviation error band computed from 1,000 Monte Carlo simulations using the variance-covariance matrix of the estimated coefficients and their asymptotically normal distribution. Data sources: Caprio and Klingebiel (2003), Calvo, Izquierdo and Talvi (2006), Cerra and Saxena (2008), Mueller (2008), World Bank WDI.}{\footnotesize\par}
+
+\end{figure}
+
+
+\begin{table}[H]
+	\begin{centering}
+		\captionsetup{justification=centering}
+		\caption{Individual Elasticities and Partial Insurance Coefficients} \label{tab:BPP_estimates}
+		\vspace*{-0.2em}
+		\begin{tabular}{lllcccc}
+			\toprule
+			\vspace{-.5em}      \\
+			& & \hspace{2em} & \multicolumn{1}{c}{{U.S.}} &   \multicolumn{1}{c}{ {Italy}}
+			& \multicolumn{1}{c}{ {Peru}}  \\
+			\vspace{-.5em}      \\
+			\hline
+			\vspace{-.5em}      \\
+			\input empirical/output/tableB1_a 
+			\vspace{-.5em}  \\
+			\hline
+			\vspace{-.5em}      \\
+			\multicolumn{5}{l}{\textit{Blundell \textit{et al.} (2008) coefficients}} \vspace{.5em}  \\
+			\input empirical/output/tableB1_b 
+			\vspace{-.5em}  \\
+			\toprule
+		\end{tabular} \\ \vspace*{0.5em}
+	\end{centering}
+	\flushleft  \footnotesize{\textit{Notes}: Income is defined as monetary after-tax nonfinancial income. Consumption is defined as consumption of nondurable goods and services. Both variables are deflated by the CPI and residualized from households' observable characteristics and time trends (see empirical model \eqref{residual} in Appendix \ref{data_appendix} for details). Individual elasticities are estimated with panel data and an individual-level regression of the log change in consumption on the log change in income and a constant. Persistent and transitory shocks coefficient estimates for the U.S. are from \citet{blundell2008consumption}. Estimates for Italy and Peru are our own computations following the method of \citet{blundell2008consumption}, further described in Section \ref{appendix_bpp}. Data source: SHIW for Italy and ENAHO for Peru.}
+\end{table}
+
+
+\begin{table}[H]
+\begin{centering}
+\caption{Standard deviation of income and consumption by residualization
+{\label{tab_residualization}}}
+\vspace*{-0.2em}
+ \resizebox{\textwidth}{!}{
+\begin{tabular}{ll >{\centering\arraybackslash} p{1.0cm}  >{\centering\arraybackslash} p{1cm} >{\centering\arraybackslash} p{1cm} >{\centering\arraybackslash} p{1cm} >{\centering\arraybackslash} p{1cm} >{\centering\arraybackslash} p{1cm} >{\centering\arraybackslash} p{1cm} >{\centering\arraybackslash} p{1cm} >{\centering\arraybackslash} p{1cm} >{\centering\arraybackslash} p{.0cm}}
+\toprule
+ &  & \multicolumn{4}{c}{Euro Crisis}  & \hspace{.3em} & \multicolumn{4}{c}{Emerging-market Crises}
+\\ \cline{3-6} \cline{8-11} \vspace{-.9em} \\
+ & &  \multicolumn{2}{c}{Italy} & \multicolumn{2}{c}{Spain} & \hspace{.3em} & \multicolumn{2}{c}{Mexico} & \multicolumn{2}{c}{Peru}  \hspace{.3em}
+ \\ \cline{3-4} \cline{5-6} \cline{8-9} \cline{10-11} \vspace{-.9em} \\
+  & &  Y & C & Y & C & \hspace{.3em} & Y & C & Y & C \hspace{.3em} & \tabularnewline
+\hline
+\vspace{-.5em} \\
+\input empirical/output/tableB2_a
+\hline
+\vspace{-.5em} \\
+\multicolumn{3}{l}{\textit{Residualized by:}} \vspace{.5em} \\
+\input empirical/output/tableB2_b
+\hline
+\vspace{-.5em} \\
+\input empirical/output/tableB2_c
+\toprule
+\end{tabular} } \\
+
+\par\end{centering}
+\medskip{}
+
+\raggedright{}\textit{\footnotesize{}Notes}{\footnotesize{}: Non-residualized are the standard deviation of the log of Income (Y) and Consumption (C) deflated by the CPI. Rows 2 and below are for residualized log of Income and Consumption by successively adding the covariates shown from households' observable characteristics and time trends. Residualized (Baseline model) is the full empirical model after also adding time trends and R$^2$ is for this regression. For Italy, income and consumption are divided by household size, other countries are total household income and consumption. Regressions use sample weights. Data sources: SHIW-BI Italy, EPF-INE Spain, ENIGH-INEGI Mexico, ENAHO-INEI Peru. }{\footnotesize\par}
+
+\end{table}
+
+
+\begin{table}[H]
+\begin{centering}
+\caption{Consumption-income Elasticities: Alternative Measures
+{\label{tab_elasticities_appendix_1}}}
+\vspace*{-0.2em}
+ \resizebox{\textwidth}{!}{
+\begin{tabular}{lll >{\centering\arraybackslash} p{2.0cm}  >{\centering\arraybackslash} p{2cm} >{\centering\arraybackslash} p{.2cm} >{\centering\arraybackslash} p{2cm} >{\centering\arraybackslash} p{2cm} >{\centering\arraybackslash} p{2cm} >{\centering\arraybackslash} p{.0cm} >{\centering\arraybackslash} p{1.3cm} >{\centering\arraybackslash} p{.0cm}}
+\toprule
+ &  & & \multicolumn{2}{c}{Euro Crisis} &  \hspace{.3em}  & \multicolumn{3}{c}{Emerging-market Crises}  &  \hspace{.3em} & \multirow{3}{*}{Average}
+\\ \cline{4-5} \cline{7-9} \vspace{-.9em} \\
+ & &  & Italy &  \hspace{.3em} Spain \hspace{.3em}  & \hspace{.3em} & Mexico `94  & Mexico `08 & Peru  \hspace{.3em} \tabularnewline
+\hline
+\vspace{-.9em} \\
+\multicolumn{2}{l}{\textit{a. Baseline}} \vspace{.3em} \\
+\input empirical/output/tableB3_a
+\midrule
+\multicolumn{3}{l}{\textit{b. Non-residualized}} \vspace{.5em} \\
+\input empirical/output/tableB3_b
+\midrule
+\multicolumn{3}{l}{\textit{c. Average of logs}} \vspace{.5em} \\
+\input empirical/output/tableB3_c
+\hline
+\vspace{-.9em} \\
+\input empirical/output/table_baselineN
+\toprule
+\end{tabular} } \\
+
+\par\end{centering}
+
+\raggedright{}\textit{\scriptsize{}Notes}{\scriptsize{}:
+Income (Y) is defined as monetary after-tax nonfinancial income. Consumption (C) is defined as consumption of nondurable goods and services. Both variables are deflated by the CPI. Elasticities are calculated as the ratio of the log change in consumption to the log change in income. Panel (a) shows the baseline calculations in which income and consumption are residualized from households' observable characteristics and time trends. Panel (b) shows the same calculations without residualizing variables. Panel (c) uses residualized income and consumption with the elasticity calculated using the average of the log for each variable.  Top 20-income, Top 10-income, and Top 5-income households are those above the 80th, 90th, and 95th percentile of income respectively. Further details in Appendix \ref{data_appendix}. Data sources:  SHIW-BI Italy, EPF-INE Spain, ENIGH-INEGI Mexico, ENAHO-INEI Peru.}{\scriptsize\par}
+\end{table}
+
+
+\begin{table}[H]
+\begin{centering}
+\caption{Consumption-income Elasticities: By Income and Consumption Definitions
+{\label{tab_elasticities_appendix_2}}}
+\vspace*{-0.2em}
+ \resizebox{\textwidth}{!}{
+\begin{tabular}{lll >{\centering\arraybackslash} p{2.0cm}  >{\centering\arraybackslash} p{2cm} >{\centering\arraybackslash} p{.2cm} >{\centering\arraybackslash} p{2cm} >{\centering\arraybackslash} p{2cm} >{\centering\arraybackslash} p{2cm} >{\centering\arraybackslash} p{.0cm} >{\centering\arraybackslash} p{1.3cm} >{\centering\arraybackslash} p{.0cm}}
+\toprule
+ &  & & \multicolumn{2}{c}{Euro Crisis} &  \hspace{.3em}  & \multicolumn{3}{c}{Emerging-market Crises}  &  \hspace{.3em} & \multirow{3}{*}{Average}
+\\ \cline{4-5} \cline{7-9} \vspace{-.9em} \\
+ & &  & Italy &  \hspace{.3em} Spain \hspace{.3em}  & \hspace{.3em} & Mexico `94  & Mexico `08 & Peru \hspace{.3em} \tabularnewline
+\hline
+\vspace{-.9em} \\
+\multicolumn{2}{l}{\textit{a. Baseline}} \vspace{.1em} \\
+\input empirical/output/tableB4_a
+\midrule
+\multicolumn{3}{l}{\textit{b. Including All Monetary Income}} \vspace{.3em} \\
+\input empirical/output/tableB4_b
+\midrule
+\multicolumn{3}{l}{\textit{c. Including Durable Consumption}} \vspace{.3em} \\
+\input empirical/output/tableB4_c
+\midrule
+\multicolumn{5}{l}{\textit{d. Including All Monetary and Nonmonetary Items}} \vspace{.3em} \\
+\input empirical/output/tableB4_d
+\hline
+\vspace{-.9em} \\
+\input empirical/output/table_baselineN
+\toprule
+\end{tabular} } \\
+
+\par\end{centering}
+\medskip{}
+
+\raggedright{}\textit{\footnotesize{}Notes}{\footnotesize{}:
+Income (Y) and Consumption (C) are deflated by the CPI and residualized from households' observable characteristics and time trends. Elasticities are calculated as the ratio of the log change in consumption to the log change in income. Panel (a) shows the baseline, in which Income is defined as monetary after-tax nonfinancial income and consumption includes nondurable goods and services. Panel (b) shows the results when including all of the monetary components of income and nondurable consumption; Panel (c) including all of the monetary components of consumption and income; and Panel (d) including all of the monetary and nonmonetary components of consumption and income. Top-income households are those above the 90th percentile of income. Further details in Appendix \ref{data_appendix}. Data sources:  SHIW-BI Italy, EPF-INE Spain, ENIGH-INEGI Mexico, ENAHO-INEI Peru. }{\footnotesize\par}
+\end{table}
+
+
+\begin{table}[H]
+\begin{centering}
+\caption{Consumption-income Elasticities: Synthetic Cohort and Panel
+{\label{tab_elasticities_crosssec_panel}}}
+\vspace*{-0.2em}
+ %
+ \resizebox{\textwidth}{!}{
+\begin{tabular}{lll >{\centering\arraybackslash} p{3.7cm}  >{\centering\arraybackslash} p{2cm} >{\centering\arraybackslash} p{.2cm} >{\centering\arraybackslash} p{3.7cm} >{\centering\arraybackslash} p{2cm} >{\centering\arraybackslash} p{.0cm} >{\centering\arraybackslash} p{.0cm} >{\centering\arraybackslash} p{.0cm} >{\centering\arraybackslash} p{.0cm}}
+\toprule
+ &  & & \multicolumn{2}{c}{Euro Crisis}  & \hspace{.3em} & \multicolumn{2}{c}{Emerging-market Crises}  \\
+ &  & & \multicolumn{2}{c}{Italy}  & \hspace{.3em} & \multicolumn{2}{c}{Peru}
+\\ \cline{4-5} \cline{7-8} \vspace{-.9em} \\
+ & &  & Synthetic Cohort & \hspace{.3em} Panel \hspace{.3em} & \hspace{.3em} & Synthetic Cohort  & \hspace{.3em} Panel \hspace{.3em} \tabularnewline
+\hline
+\vspace{-.9em} \\
+\input empirical/output/tableB5_a
+\hline
+\vspace{-.9em} \\
+\input empirical/output/tableB5_b
+\toprule
+\end{tabular} } \\
+\par\end{centering}
+\medskip{}
+
+\raggedright{}\textit{\footnotesize{}Notes}{\footnotesize{}: Income (Y) is defined as monetary after-tax nonfinancial income. Consumption (C) is defined as consumption of nondurable goods and services. Both variables are deflated by the CPI and residualized from households' observable characteristics and time trends (see empirical model \eqref{residual} in Appendix \ref{data_appendix} for details). Elasticities are calculated as the ratio of the log change in consumption to the log change in income.  Top-income households for the synthetic cohort are those in the highest decile of residualized income in each year, and for the panel are on average over all years in the episode. The synthetic cohort values are calculated using sample weights and panel values are an unweighted average. Further details in Appendix \ref{data_appendix}. Data sources:  SHIW-BI Italy, and INEI Peru.}{\footnotesize\par}
+
+\end{table}
+
+
+\begin{figure}[H]
+\caption{Income mobility in Italy and Peru}\label{fig_income_mob}
+	\begin{tabular}{cc}
+		(a) Italy & (b) Peru\\
+		\includegraphics[scale=.6]{empirical/output/figureB2_a.pdf}   &
+		\includegraphics[scale=.6]{empirical/output/figureB2_b.pdf} \\
+	\end{tabular}
+\raggedright{}\textit{\footnotesize{}Notes}{\footnotesize{}: {\color{black} Panel (a) and (b) show the income transition probabilities across income deciles in Italy and Peru, respectively. Each square shows the probability of moving from a given initial income decile (row) to the next period's income decile (column). For Italy the probability is biennial and for Peru the probability is annual. Income is defined as monetary after-tax nonfinancial income. Income is deflated by the CPI and residualized from households' observable characteristics and time trends (see empirical model  \eqref{residual} in Appendix \ref{data_appendix} for details).  The transition probabilities are calculated for the crisis episodes.  Data sources: SHIW-BI Italy,  and ENAHO-INEI Peru.}
+}{\footnotesize\par}
+\end{figure}
+
+
+\begin{figure}[H]
+\begin{tabular}{cc}
+\multicolumn{2}{c}{(a) Euro Crisis} \vspace{.4em}  \\
+{\small{}{Italy} } & {\small{}{Spain} } \tabularnewline
+\includegraphics[scale=1.2]{empirical/output/figureB3_a.pdf} &
+\includegraphics[scale=1.2]{empirical/output/figureB3_b.pdf}  \\
+\multicolumn{2}{c}{(b) Emerging-market Crises} \vspace{.4em} \\
+{\small{}{Mexico} } & {\small{}{Peru} }\tabularnewline
+\includegraphics[scale=1.2]{empirical/output/figureB3_c.pdf} &
+\includegraphics[scale=1.2]{empirical/output/figureB3_d.pdf}  \\
+\end{tabular}\caption{Consumption-income Elasticities Across the Income Distribution
+\label{fig_CY_incomedecile_residualized}}
+\medskip{}
+\raggedright{}\textit{\footnotesize{}Notes}{\footnotesize{}: This figure shows the log-change of consumption and income during each episode for different deciles of residualized income on the horizontal axis. Income is defined as monetary after-tax nonfinancial income. Consumption is defined as consumption of nondurable goods and services. Income and consumption are deflated by the CPI and residualized from households' observable characteristics and time trends (see empirical model \eqref{residual} in Appendix \ref{data_appendix} for details). Dots correspond to observed values, the
+solid line is the locally weighted smoothing of observed values, and the shaded area shows the 90\% confidence intervals computed using 2,000 bootstrap replications.  Values for Mexico are the simple average of its two episodes in the sample (1994 and 2008).  Further details in Appendix \ref{data_appendix}. Data sources: SHIW-BI Italy, EPF-INE Spain, ENIGH-INEGI Mexico, ENAHO-INEI Peru.}{\footnotesize\par}
+\end{figure}
+
+
+
+\begin{figure}[H]
+\begin{tabular}{cc}
+\multicolumn{2}{c}{(a) Euro Crisis} \vspace{.4em}  \\
+{\small{}{Italy} } & {\small{}{Spain} } \tabularnewline
+\includegraphics[scale=1.2]{empirical/output/figureB4_a.pdf} &
+\includegraphics[scale=1.2]{empirical/output/figureB4_b.pdf}  \\
+\multicolumn{2}{c}{(b) Emerging-market Crises} \vspace{.4em} \\
+{\small{}{Mexico} } & {\small{}{Peru} }\tabularnewline
+\includegraphics[scale=1.2]{empirical/output/figureB4_c.pdf} &
+\includegraphics[scale=1.2]{empirical/output/figureB4_d.pdf}  \\
+\end{tabular}\caption{Income Dynamics by Income Quintiles
+\label{fig_Y_dynamics}}
+\medskip{}
+\raggedright{}\textit{\footnotesize{}Notes}{\footnotesize{}: This figure shows the detrended income during each episode for different income quintiles of residualized income. Income is defined as monetary after-tax nonfinancial income, deflated by the CPI. Values for Mexico are the simple average of its two episodes in the sample (1994 and 2008). Data sources: SHIW-BI Italy, EPF-INE Spain, ENIGH-INEGI Mexico, ENAHO-INEI Peru.}{\footnotesize\par}
+\end{figure}
+
+\begin{spacing}{1}
+\begin{figure}[H]
+	\begin{tabular}{cc}
+		\multicolumn{2}{c}{(a) Euro Crisis} \vspace{.4em}  \\
+		{\small{}{Italy} } & {\small{}{Spain} } \tabularnewline
+		\includegraphics[scale=1.2]{empirical/output/figureB5_a.pdf} &
+		\includegraphics[scale=1.2]{empirical/output/figureB5_b.pdf} \\
+		\multicolumn{2}{c}{(b) Emerging-market Crises} \vspace{.4em} \\
+		{\small{}{Mexico} } & {\small{}{Peru} }\tabularnewline
+		\includegraphics[scale=1.2]{empirical/output/figureB5_c.pdf} &
+		\includegraphics[scale=1.2]{empirical/output/figureB5_d.pdf} \\
+	\end{tabular}\caption{Half-life of Income by Income Quintiles
+		\label{fig_halflife}}
+	\medskip{}
+	\raggedright{}\textit{\footnotesize{}Notes}{\footnotesize{}: This figure shows the half-life of detrended income during each episode for different quintiles of residualized income. Half-life refers to the number of years that took to recover half of the contraction in income. Values for Mexico are the simple average of its two episodes in the sample (1994 and 2008). Data sources: SHIW-BI Italy, EPF-INE Spain, ENIGH-INEGI Mexico, ENAHO-INEI Peru.}{\footnotesize\par}
+\end{figure}
+\end{spacing}
+
+\begin{figure}[H]
+	\begin{tabular}{cc}
+		\multicolumn{2}{c}{(a) Euro Crisis} \vspace{.4em}  \\
+		{\small{}{Italy} } & {\small{}{Spain} } \tabularnewline
+		\includegraphics[scale=1.2]{empirical/output/figureB6_a.pdf} &
+		\includegraphics[scale=1.2]{empirical/output/figureB6_b.pdf} \\
+		\multicolumn{2}{c}{(b) Emerging-market Crises} \vspace{.4em} \\
+		{\small{}{Mexico} } & {\small{}{Peru} }\tabularnewline
+		\includegraphics[scale=1.2]{empirical/output/figureB6_c.pdf} &
+		\includegraphics[scale=1.2]{empirical/output/figureB6_d.pdf} \\
+	\end{tabular}\caption{Variance of Consumption and Income
+		\label{fig_var_CY}}
+	\medskip{}
+	\raggedright{}\textit{\footnotesize{}Notes}{\footnotesize{}: This figure shows the cross-sectional variance of the log of consumption and income in each year. Income is defined as monetary after-tax nonfinancial income. Consumption is defined as consumption of nondurable goods and services. Income and consumption are deflated by the CPI and residualized from households' observable characteristics and time trends (see empirical model \eqref{residual} in Appendix \ref{data_appendix} for details). The shaded area is peak-to-trough of detrended GDP per capita during each episode. Data sources: OECD, SHIW-BI Italy, EPF-INE Spain, ENIGH-INEGI Mexico, ENAHO-INEI Peru.}{\footnotesize\par}
+\end{figure}
+
+
+
+\begin{figure}[H]
+	\begin{tabular}{cc}
+		\multicolumn{2}{c}{(a) Euro Crisis} \vspace{.4em}  \\
+		{\small{}{Italy} } & {\small{}{Spain} } \tabularnewline
+		\includegraphics[scale=1.2]{empirical/output/figureB7_a.pdf} &
+		\includegraphics[scale=1.2]{empirical/output/figureB7_b.pdf} \\
+		\multicolumn{2}{c}{(b) Emerging-market Crises} \vspace{.4em} \\
+		{\small{}{Mexico} } & {\small{}{Peru} }\tabularnewline
+		\includegraphics[scale=1.2]{empirical/output/figureB7_c.pdf} &
+		\includegraphics[scale=1.2]{empirical/output/figureB7_d.pdf} \\
+	\end{tabular}\caption{90/10 Ratio of Consumption and Income
+		\label{fig_9010_CY}}
+	\medskip{}
+	\raggedright{}\textit{\footnotesize{}Notes}{\footnotesize{}: This figure shows the ratio of the 90th percentile to the 10th percentile of consumption and income in each year. Income is defined as monetary after-tax nonfinancial income. Consumption is defined as consumption of nondurable goods and services.  Income and consumption are deflated by the CPI and residualized from households' observable characteristics and time trends (see empirical model \eqref{residual} in Appendix \ref{data_appendix} for details). The shaded area is peak-to-trough of detrended GDP per capita during each episode. Data sources: OECD, SHIW-BI Italy, EPF-INE Spain, ENIGH-INEGI Mexico, ENAHO-INEI Peru.}{\footnotesize\par}
+\end{figure}
+
+\begin{table}[H]
+\begin{centering}
+\caption{Consumption-income Elasticities: Illiquid Wealth -- Italy
+{\label{tab_elasticities_illiquidwealth_italy}}}
+\vspace*{-0.2em}
+ %
+\begin{tabular}{lll >{\centering\arraybackslash} p{2.0cm}  >{\centering\arraybackslash} p{2cm} >{\centering\arraybackslash} p{.2cm} >{\centering\arraybackslash} p{2cm} >{\centering\arraybackslash} p{2cm} >{\centering\arraybackslash} p{2cm} >{\centering\arraybackslash} p{.0cm} >{\centering\arraybackslash} p{.0cm} >{\centering\arraybackslash} p{.0cm}}
+\toprule
+ & &  & Value & \hspace{.3em} Elasticity \hspace{.3em} \tabularnewline
+\vspace{-1cm} \\
+\hline
+\vspace{-.9em} \\
+\multicolumn{2}{l}{\textit{a.  All Households}} \vspace{.3em} \\
+\input empirical/output/tableB6_a
+\vspace{-.9em} \\
+\input empirical/output/tableB6_b
+\hline
+\vspace{-.9em} \\
+\multicolumn{2}{l}{\textit{b.  Top-Income}} \vspace{.3em} \\
+\input empirical/output/tableB6_c
+\vspace{-.9em} \\
+\input empirical/output/tableB6_d
+\toprule
+\end{tabular}  \\
+
+\par\end{centering}
+\medskip{}
+
+\raggedright{}\textit{\footnotesize{}Notes}{\footnotesize{}:
+The column Value is the median ratio of wealth to annual income by wealth category.  The column Elasticities shows the elasticities by wealth category.  Low (high) households are those with wealth-to-income ratio below (above) the median. The sample is limited to households with positive values of wealth/debt for each category.
+Total net wealth is the sum of the household’s liquid wealth and illiquid assets.  Liquid assets are net financial assets, which include deposits, bonds, stocks, mutual funds, and investment accounts.  Illiquid assets are real assets, which include real estate, business assets, and valuables. Risky liquid assets are government bonds, stock holdings, and other securities. Debts are financial liabilities, which include liabilities to banks and companies, trade debt, and liabilities to other households.  Top-income households are those in the highest quintile of income. Income (Y) is defined as monetary after-tax nonfinancial income. Consumption (C) is defined as the consumption of nondurable goods and services. Both variables are deflated by the CPI and residualized from households' observable characteristics and time trends (see empirical model \eqref{residual}
+in Appendix \ref{data_appendix} for details).  Elasticities are calculated as the ratio of the log change in consumption to the log change in income.
+Data sources:  SHIW-BI Italy.}{\footnotesize\par}
+
+\end{table}
+
+\begin{table}[H]
+\begin{centering}
+\caption{Consumption-income Elasticities by Ownership of Illiquid Assets
+{\label{tab_house_business_owners}}}
+\vspace*{-0.2em}
+ %
+ \resizebox{\textwidth}{!}{
+\begin{tabular}{lll >{\centering\arraybackslash} p{2.0cm}  >{\centering\arraybackslash} p{2cm} >{\centering\arraybackslash} p{.2cm} >{\centering\arraybackslash} p{2cm} >{\centering\arraybackslash} p{2cm} >{\centering\arraybackslash} p{2cm} >{\centering\arraybackslash} p{.0cm} >{\centering\arraybackslash} p{1.3cm} >{\centering\arraybackslash} p{.0cm}}
+\toprule
+ &  & & \multicolumn{2}{c}{Euro Crisis}   & \hspace{.3em} & \multicolumn{3}{c}{Emerging-market Crises} & \hspace{.3em} & \multirow{3}{*}{Average}
+\\ \cline{4-5} \cline{7-9} \vspace{-.9em} \\
+ & & & Italy & \hspace{.3em} Spain \hspace{.3em}    & \hspace{.3em} & Mexico `94  & Mexico `08 & Peru \hspace{.3em} \tabularnewline
+\hline
+\vspace{-.9em} \\
+\multicolumn{2}{l}{\textit{a.  All Households}} \vspace{.3em} \\
+\multicolumn{2}{l}{\textit{Firm Ownership}} \vspace{.3em} \\
+\input empirical/output/table2_a
+\vspace{-.9em} \\
+\multicolumn{2}{l}{\textit{Home Ownership}} \vspace{.3em} \\
+\input empirical/output/table2_b
+\vspace{-.9em} \\
+\input empirical/output/table_baselineN
+\hline
+\vspace{-.9em} \\
+\multicolumn{2}{l}{\textit{b.  Top-Income}} \vspace{.3em} \\
+\multicolumn{2}{l}{\textit{Firm Ownership}} \vspace{.3em} \\
+\input empirical/output/tableB7_c
+\vspace{-.9em} \\
+\multicolumn{2}{l}{\textit{Home Ownership}} \vspace{.3em} \\
+\input empirical/output/tableB7_d
+\vspace{-.9em} \\
+\input empirical/output/tableB7_e
+\toprule
+\end{tabular} } \\
+
+\par\end{centering}
+\medskip{}
+\captionsetup{font={small}, margin={0cm,0cm}, justification=justified}
+\raggedright{}\textit{\footnotesize{}Notes}{\footnotesize{}: This table shows consumption-income elasticities by ownership. Income is defined as monetary after-tax nonfinancial income. Consumption is defined as consumption of nondurable goods and services. Both variables are deflated by the CPI and residualized from households' observable characteristics and time trends (see empirical model \eqref{residual} in Appendix \ref{data_appendix} for details). Elasticities are calculated as the ratio of the log change in consumption to the log change in income. Categories are constructed such that they are comparable across countries. Top-income households are those in the highest quintile of income.Further details in Appendix \ref{data_appendix}. Data sources: SHIW-BI Italy, EPF-INE Spain, ENIGH-INEGI Mexico, ENAHO-INEI Peru.}{\footnotesize\par}
+\end{table}
+
+
+\newpage
+
+\begin{figure}[H]
+	\begin{tabular}{cc}
+		{\small{}{(a) Liquid Wealth} } & {\small{}{(b) Liquid Wealth-to-Income} } \tabularnewline
+		\includegraphics[scale=1.2]{empirical/output/figureB8_a.pdf} &
+		\includegraphics[scale=1.2]{empirical/output/figureB8_b.pdf}   \\
+		{\small{}{(c) Debt} } & {\small{}{(d) Debt-to-Income} } \tabularnewline
+		\includegraphics[scale=1.2]{empirical/output/figureB8_c.pdf} &
+\includegraphics[scale=1.2]{empirical/output/figureB8_d.pdf}
+	\end{tabular}\caption{\color{black}Consumption-income Elasticities By Liquid Wealth --- Italy
+		\label{fig_elasticities_incomedecile_residualized_panel}}
+	\medskip{}
+	\raggedright{}\textit{\footnotesize{}Notes}{\footnotesize{}: This figure shows consumption-income elasticities for different quartiles of liquid wealth on the horizontal axis. Income is defined as monetary after-tax nonfinancial income. Consumption is defined as consumption of nondurable goods and services. Income and consumption are deflated by the CPI and residualized from households' observable characteristics and time trends (see empirical model \eqref{residual} in Appendix \ref{data_appendix} for details). Dots correspond to observed elasticities and the solid line is the locally weighted smoothing of observed elasticities. Elasticities are calculated as the ratio of the log change in consumption to the log change in income. Liquid wealth is the household’s financial assets, which include deposits, bonds, stocks, mutual funds, and investment accounts.  \textcolor{black}{Debts are financial liabilities, which include liabilities to banks and companies, trade debt, and liabilities to other households. } Further details can be found in Appendix \ref{data_appendix}. Data source: SHIW-BI Italy.}{\footnotesize\par}
+\end{figure}
+
+
+
+\begin{table}[H]
+\begin{centering}
+\caption{Consumption-income Elasticities: Durable and Nondurable Goods
+{\label{tab_elasticities_dnd}}}
+\vspace*{-0.2em}
+ %
+ \resizebox{\textwidth}{!}{
+\begin{tabular}{lll >{\centering\arraybackslash} p{2.0cm}  >{\centering\arraybackslash} p{2cm} >{\centering\arraybackslash} p{.2cm} >{\centering\arraybackslash} p{2cm} >{\centering\arraybackslash} p{2cm} >{\centering\arraybackslash} p{2cm} >{\centering\arraybackslash} p{.0cm} >{\centering\arraybackslash} p{1.3cm} >{\centering\arraybackslash} p{.0cm}}
+\toprule
+ &  & & \multicolumn{2}{c}{Euro Crisis} & \hspace{.3em}  &  \multicolumn{3}{c}{Emerging-market Crises}  & \hspace{.3em} & \multirow{2}{*}{Average}
+\\ \cline{4-5} \cline{7-9} \vspace{-.9em} \\
+ & &  & Italy  & \hspace{.3em} Spain \hspace{.3em} & \hspace{.3em} & Mexico `94  & Mexico `08 & Peru  \hspace{.3em} \tabularnewline
+\hline
+\vspace{-.5em} \\
+\input empirical/output/tableB8_a
+\hline
+\vspace{-.9em} \\
+\multicolumn{4}{l}{\textit{a. Nondurable}} \vspace{.3em} \\
+\input empirical/output/tableB8_b
+\vspace{-.9em} \\
+\multicolumn{4}{l}{\textit{b. Durable}} \vspace{.3em} \\
+\input empirical/output/tableB8_c
+\hline
+\vspace{-.9em} \\
+\input empirical/output/table_baselineN
+\toprule
+\end{tabular} } \\
+
+\par\end{centering}
+\medskip{}
+
+\raggedright{}\textit{\footnotesize{}Notes}{\footnotesize{}: This table shows various moments related to households' consumption of nondurable and durable goods. Income (Y) is defined as monetary after-tax nonfinancial income. In Panel (a) Consumption (C) is defined as consumption of nondurable goods and services. In Panel (b) it is defined as consumption of durable goods. Both income and consumption variables are deflated by the CPI and residualized from households' observable characteristics and time trends (see empirical model \eqref{residual} in Appendix \ref{data_appendix} for details). Elasticities are calculated as the ratio of the log change in consumption to the log change in income. Top 10-Income households are those in the highest decile of residualized income. Further details on the classification of goods in Appendix \ref{data_appendix}. Data sources:  SHIW-BI Italy, EPF-INE Spain, ENIGH-INEGI Mexico, ENAHO-INEI Peru.}{\footnotesize\par}
+\end{table}
+
+
+
+
+\begin{table}[H]
+\begin{centering}
+\caption{Consumption-income Elasticities: Tradable/Non-tradable and Luxury/Non-luxury Goods
+{\label{tab_elasticities_tntlnl}}}
+\vspace*{-0.2em}
+ %
+ \resizebox{\textwidth}{!}{
+\begin{tabular}{lll >{\centering\arraybackslash} p{2.0cm}  >{\centering\arraybackslash} p{.2cm} >{\centering\arraybackslash} p{2cm} >{\centering\arraybackslash} p{2cm} >{\centering\arraybackslash} p{0cm} >{\centering\arraybackslash} p{2cm} >{\centering\arraybackslash} p{0cm} >{\centering\arraybackslash} p{.0cm}}
+\toprule
+ &  & & \multicolumn{1}{c}{Euro Crisis}   & & \multicolumn{2}{c}{Emerging-market Crises}  & \hspace{.3em} & \multirow{2}{*}{Average}
+\\ \cline{4-4} \cline{6-7} \vspace{-.9em} \\
+ & & & Spain  & & Mexico `94  & Mexico `08  \hspace{.3em} \vspace{-1.1em} \\
+\hline
+\vspace{-.5em} \\
+\input empirical/output/tableB9_a
+\hline
+\vspace{-.9em} \\
+\multicolumn{4}{l}{\textit{a. Tradable}} \vspace{.3em} \\
+\input empirical/output/tableB9_b
+\vspace{-.9em} \\
+\multicolumn{4}{l}{\textit{b. Non-tradable}} \vspace{.3em} \\
+\input empirical/output/tableB9_c
+\hline
+\vspace{-.9em} \\
+\multicolumn{4}{l}{\textit{c. Luxury}} \vspace{.3em} \\
+\input empirical/output/tableB9_d
+\vspace{-.9em} \\
+\multicolumn{4}{l}{\textit{d. Non-luxury}} \vspace{.3em} \\
+\input empirical/output/tableB9_e
+\hline
+\vspace{-.9em} \\
+\input empirical/output/tableB9_f
+\toprule
+\end{tabular}}  \\
+
+\par\end{centering}
+\medskip{}
+
+\raggedright{}\textit{\footnotesize{}Notes}{\footnotesize{}:
+This table shows various moments related to households' consumption of tradable and non-tradable goods and luxury and non-luxury goods. Income (Y) is defined as monetary after-tax nonfinancial income. In Panels (a) and (b) Consumption (C) is defined as consumption of tradable and non-tradable goods, respectively. In Panels (c) and (d) Consumption (C) is defined as consumption of luxury and non-luxury goods, respectively. Both income and consumption variables are deflated by the CPI and residualized from households' observable characteristics and time trends (see empirical model \eqref{residual} in Appendix \ref{data_appendix} for details). Elasticities are calculated as the ratio of the log change in consumption to the log change in income. Top 10-Income households are those in the highest decile of residualized income. Further details on the classification of goods in Appendix \ref{data_appendix}. Data sources: EPF-INE Spain, ENIGH-INEGI Mexico.}{\footnotesize\par}
+\end{table}
+
+
+
+
+\begin{table}[H]
+\begin{centering}
+\caption{Consumption-Income Elasticities Adjusted by Inflation Heterogeneity
+{\label{tab_rel_prices}}}
+\vspace*{-0.2em}
+ %
+ \resizebox{\textwidth}{!}{
+\begin{tabular}{lll >{\centering\arraybackslash} p{2.0cm}  >{\centering\arraybackslash} p{2cm} >{\centering\arraybackslash} p{2cm} >{\centering\arraybackslash}  p{.0cm} >{\centering\arraybackslash} p{1.3cm} >{\centering\arraybackslash} p{.0cm}}
+\toprule
+ &  & & \multicolumn{3}{c}{Emerging-market Crises}  &  & \multirow{3}{*}{Average} &  \hspace{.3em}
+\\ \cline{4-6} \vspace{-.9em} \\
+ & &  & Mexico `94  & Mexico `08 & Peru \hspace{.3em} \tabularnewline
+\hline
+\vspace{-.9em} \\
+\vspace{-.7em} \\
+\input empirical/output/tableB10_a
+\hline
+\vspace{-.9em} \\
+\input empirical/output/tableB10_b
+\toprule
+\end{tabular} } \\
+
+\par\end{centering}
+\medskip{}
+
+\raggedright{}\textit{\footnotesize{}Notes}{\footnotesize{}: The first row refers to the difference between the average inflation and the inflation of households in the top income decile. Inflation for both groups is computed using log-differences from the peak (CPI = 100) to trough of each episode. Income (Y) is defined as monetary after-tax nonfinancial income. Consumption (C) is defined as consumption of nondurable goods and services. Both variables are residualized from households' observable characteristics and time trends (see empirical model \eqref{residual} in Appendix \ref{data_appendix} for details). Income is deflated using baseline CPI and consumption decile-specific CPI constructed using the decile's consumption basket. Elasticities are calculated as the ratio of the log change in consumption to the log change in income. Data sources: ENIGH-INEGI Mexico, and ENAHO-INEI Peru.}{\footnotesize\par}
+\end{table}
+
+
+
+
+\begin{table}[H]
+\begin{centering}
+\caption{Robustness: Permanent Heterogeneity
+{\label{perm_het_robust}}}
+\vspace*{-0.2em}
+\begin{tabular}{lll >{\centering\arraybackslash} p{2.0cm}  >{\centering\arraybackslash} p{.2cm} >{\centering\arraybackslash} p{2cm} >{\centering\arraybackslash} p{.2cm} >{\centering\arraybackslash} p{2cm} >{\centering\arraybackslash} p{.0cm} }
+\toprule
+ &  & & \multicolumn{1}{c}{Euro Crisis} & \hspace{.3em}  &  \multicolumn{1}{c}{EM Crises}  & \hspace{.3em} & \multirow{2}{*}{Average} & \hspace{.3em} \\
+ & &  & Italy  & \hspace{.3em} & Peru &  \hspace{.3em} \\
+\hline
+\vspace{-.9em} \\
+\multicolumn{2}{l}{\textit{Low-Elasticity HHs}} \vspace{.3em} \\
+\input empirical/output/tableB11_a
+\vspace{-.6em} \\
+\hline
+\vspace{-.9em} \\
+\multicolumn{2}{l}{\textit{High-Elasticity HHs}} \vspace{.3em} \\
+\input empirical/output/tableB11_b
+\vspace{-.6em} \\
+\hline
+\vspace{-.9em} \\
+\input empirical/output/tableB11_c
+\toprule
+\end{tabular} \\
+
+
+\par\end{centering}
+\medskip{}
+
+\raggedright{}\textit{\footnotesize{}Notes}{\footnotesize{}:
+Income (Y) is defined as monetary after-tax nonfinancial income. Consumption (C) is defined as consumption of nondurable goods and services. Both variables are deflated by the CPI and residualized from households' observable characteristics and time trends (see empirical model \eqref{residual} in Appendix \ref{data_appendix} for details). Elasticities are calculated as the ratio of the log change in consumption to the log change in income. Top-Income households are those above the median of residualized income. Households with high (low) elasticity are those with individual estimated elasticities above (below) the median. Further details in Appendix \ref{data_appendix}. Data sources:  SHIW-BI Italy, ENAHO-INEI Peru.
+}{\footnotesize\par}
+\end{table}
+
+
+\section{Data Description} \label{data_appendix}
+
+
+\begin{figure}[H]
+\begin{tabular}{cc}
+\multicolumn{2}{c}{(a) Italy -- SHIW} \vspace{.4em}  \\
+ Income & Consumption \\
+\includegraphics[scale=1]{empirical/output/figureA1_a_i} &
+\includegraphics[scale=1]{empirical/output/figureA1_a_ii} \\
+\multicolumn{2}{c}{(b) Spain -- EPF-INE} \vspace{.4em}  \\
+ Income & Consumption \\
+\includegraphics[scale=1]{empirical/output/figureA1_b_i} &
+\includegraphics[scale=1]{empirical/output/figureA1_b_ii} \\
+\end{tabular} \\
+\caption{Microlevel Data and National Accounts: Euro Economies \label{macro_micro_euro}}
+\medskip{}
+\raggedright{}\textit{\footnotesize{}Notes}{\footnotesize{}: This figure compares microlevel data on per capita disposable income and total consumption expenditure consumption from the surveys used in the empirical analysis in Section \ref{sec_empirical} with national accounts data (GDP and PCE).  Panel (a) shows the data for Italy, corresponding to the SHIW, and Panel (b) shows the data for Spain, corresponding to the EPF-INE.  These sources are further described in Sections \ref{itadata} and \ref{spadata}. Sources for the national accounts data are described in Section  \ref{datagg_description_appendix}. Moments from the microlevel data are computed using sample weights.
+}{\footnotesize\par}
+\end{figure}
+
+
+\begin{table}[H]
+\begin{centering}
+\captionsetup{justification=centering}
+    \caption{Sample Selection SHIW-Italy \label{observations_italy}}
+    \vspace*{-0.2em}
+    \begin{tabular}{lcc}
+    \midrule \midrule
+     &Obs. Dropped & Obs. in Sample \\
+    \toprule
+\input empirical/output/tableA1
+       \midrule \midrule
+    \end{tabular}
+    \end{centering}
+   \flushleft \footnotesize{\textit{Notes}: This table shows the number of observations resulting from our sample selection for the SHIW in Italy. The first line, \textit{All units}, shows the original sample of units observed during the period 1995 to 2016. The following lines detail the set of observations dropped from different filters applied to the sample and the resulting number of observations. \textit{Outliers} refer to observations  with negative income or with an income-to-consumption ratio in the top 0.5\% or bottom 0.5\% of the distribution.  More details on these filters can be found in the text. Data source: SHIW Italy.}
+\end{table}
+
+
+\begin{figure}[H]
+\captionsetup{justification=centering}
+\caption{Net Liquid Asset-to-monthly Income Distribution: Italy and Spain}
+\begin{tabular}{cc}
+(a) Italy & (b) Spain \\
+\includegraphics[scale=1.2]{empirical/output/figureA2_a} &
+\includegraphics[scale=1.2]{empirical/output/figureA2_b} \\
+\end{tabular}
+\flushleft\footnotesize{\textit{Notes}:
+This figure shows the distribution of the ratio of net liquid assets to monthly income for Italy and Spain. For Italy, net liquid assets are defined as net financial assets.  Income excludes financial income. For Spain, net liquid assets includes deposits/accounts usable for payments, public equity shares, fixed-income securities, mutual funds and portfolios under management, and credit card debt. The vertical line corresponds to the HtM cutoff of 2 weeks of income (i.e., 0.5 net liquid assets-to-income). Values are truncated at -10 and 10. Data sources: SHIW-BI Italy, EFF Spain.} \label{fig:htm_it_spa}
+\end{figure}
+
+
+\begin{table}[H]
+\begin{centering}
+\captionsetup{justification=centering}
+    \caption{Sample Selection EPF-Spain  \label{observations_spain}}
+    \vspace*{-0.2em}
+    \begin{tabular}{lcc}
+    \midrule \midrule
+     &Obs. Dropped & Obs. in Sample \\
+    \toprule
+\input empirical/output/tableA2
+       \midrule \midrule
+    \end{tabular}
+    \end{centering}
+   \flushleft \footnotesize{\textit{Notes}: This table shows the number of observations resulting from our sample selection for the EPF-INE in Spain. The first line, \textit{All units}, shows the original sample of units observed during the period 2006 to 2018. The following lines detail the set of observations dropped from different filters applied to the sample and the resulting number of observations.  \textit{Outliers} refer to observations  with negative income or with an income-to-consumption ratio in the top 0.5\% or bottom 0.5\% of the distribution. More details on these filters can be found in the text. Data source: EPF-INE Spain.}
+\end{table}
+
+
+\begin{figure}[H]
+\begin{tabular}{cc}
+\multicolumn{2}{c}{(a) Mexico -- ENIGH} \vspace{.4em}  \\
+ Income & Consumption \\
+\includegraphics[scale=1]{empirical/output/figureA3_a_i} &
+\includegraphics[scale=1]{empirical/output/figureA3_a_ii} \\
+\multicolumn{2}{c}{(b) Peru  -- ENAHO} \vspace{.4em}  \\
+ Income & Consumption \\
+\includegraphics[scale=1]{empirical/output/figureA3_b_i} &
+\includegraphics[scale=1]{empirical/output/figureA3_b_ii}  \\
+\end{tabular} \\
+\caption{Microlevel Data and National Accounts: Emerging Economies \label{macro_micro_ems}}
+\medskip{}
+\raggedright{}\textit{\footnotesize{}Notes}{\footnotesize{}: This figure compares the microlevel data on per capita disposable income and total consumption expenditure from the surveys used in the empirical analysis in Section \ref{sec_empirical} with national accounts data (GDP and PCE).  Panel (a) shows the data for Italy, corresponding to the SHIW, and Panel (b) shows the data for Spain, corresponding to the EPF-INE.  These sources are further described in Sections \ref{MEXapp} and \ref{Peru_app}. Sources for national accounts data are described in Section  \ref{datagg_description_appendix}. Moments from the microlevel data are computed using sample weights.
+}{\footnotesize\par}
+\end{figure}
+
+
+\begin{table}[H]
+\begin{centering}
+\captionsetup{justification=centering}
+    \caption{Sample Selection ENIGH-Mexico  \label{observations_mexico}}
+    \vspace*{-0.2em}
+    \begin{tabular}{lcc}
+    \midrule \midrule
+     &Obs. Dropped & Obs. in Sample \\
+    \toprule
+\input empirical/output/tableA3
+       \midrule \midrule
+    \end{tabular}
+    \end{centering}
+    \flushleft\footnotesize{\textit{Notes}: This table shows the number of observations resulting from our sample selection for the ENIGH in Mexico. The first line, \textit{All units}, shows the original sample of units observed during the period 1992 to 2014. The following lines detail the set of observations dropped from different filters applied to the sample and the resulting number of observations. \textit{Outliers} refer to observations  with negative income or with an income-to-consumption ratio in the top 0.5\% or bottom 0.5\% of the distribution. More details on these filters can be found in the text.  Data source: ENIGH-INEGI Mexico.}
+\end{table}
+
+
+\begin{table}[H]
+\begin{centering}
+\captionsetup{justification=centering}
+    \caption{Sample Selection ENAHO-Peru  \label{observations_peru}}
+    \vspace*{-0.2em}
+    \begin{tabular}{lcc}
+    \midrule \midrule
+     &Obs. Dropped & Obs. in Sample \\
+    \toprule
+\input empirical/output/tableA4
+       \midrule \midrule
+    \end{tabular}
+    \end{centering}
+    \flushleft\footnotesize{\textit{Notes}: This table shows the number of observations resulting from our sample selection for the ENAHO in Peru. The first line, \textit{All units}, shows the original sample of units observed during the period 2004 to 2018. The following lines detail the set of observations dropped by different filters applied to the sample and the resulting number of observations. \textit{Outliers} refer to observations  with negative income or with an income-to-consumption ratio in the top 0.5\% or bottom 0.5\% of the distribution.  More details on these filters can be found in the text. Data source: ENAHO Peru.}
+\end{table}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Omitted Proofs and Results}\label{app_proofs}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Additional Results of Quantitative Analysis}\label{app_quant}
+
+\begin{table}[H]
+\begin{centering}
+\caption{{\color{black}Wealth Distribution in Italy: Summary Statistics}
+{\label{tab_wealthdist_sumstats}}}
+\vspace*{-0.2em}
+ \resizebox{\textwidth}{!}{
+\begin{tabular}{lll >{\centering\arraybackslash} p{2.5cm}  >{\centering\arraybackslash} p{2.5cm} >{\centering\arraybackslash} p{2.5cm} >{\centering\arraybackslash} p{.02cm} >{\centering\arraybackslash} p{2cm} >{\centering\arraybackslash} p{2cm} >{\centering\arraybackslash} p{.0cm} >{\centering\arraybackslash} p{1.3cm} >{\centering\arraybackslash} p{.0cm}}
+\toprule
+ & \multicolumn{2}{l}{ Variable} & Liquid & Non-Liquid & Total  \hspace{.3em} \tabularnewline
+\hline
+\vspace{-.9em} \\
+\input empirical/output/tableD1_a
+\hline
+\vspace{-.9em} \\
+\input empirical/output/tableD1_b
+\toprule
+\end{tabular} } \\
+
+\par\end{centering}
+\medskip{}
+\captionsetup{font={small}, margin={0cm,0cm}, justification=justified}
+
+\raggedright{}\textit{\footnotesize{}Notes}{\footnotesize{}: \color{black}{This table compares moments of wealth distribution by category. The value is the average over the episode from 2006 to 2014, where the calculation for each year uses household survey weights. Wealth-to-income is the ratio of aggregate wealth to aggregate annual income by wealth category. Average Wealth-to-income is the average ratio of household wealth to annual income by wealth category. Income is defined as monetary after-tax nonfinancial income. Total wealth is the sum of the household’s liquid wealth and non-liquid assets. Liquid assets are financial assets, which include deposits, bonds, stocks, mutual funds, and investment accounts, net of credit card debt.  Non-liquid assets are real assets, which include real estate, business assets, and valuables.  Data source: SHIW-BI Italy.}}{\footnotesize\par}
+\end{table}
+
+
+\begin{figure}[H]
+\caption{Model Analysis: Identification of Main Parameters}
+\label{fig: ident}
+\begin{tabular}{cc}
+\vspace{-.7em} \\
+PI View Experiment & CT View Experiment \vspace{.1em}  \\
+Persistence of Growth Shock ($\rho_g$) & Elasticity Financial Constraint-to-Y ($\nu$) \\
+\includegraphics[scale=.4]{model/output/figureD1_a.pdf} &
+\includegraphics[scale=.4]{model/output/figureD1_b.pdf} \\
+\end{tabular}
+\flushleft\raggedright{}\textit{\footnotesize{}Notes}{: \footnotesize{This figure shows the consumption-income elasticities in the calibrated model presented in Sections \ref{sec_pih} and \ref{sec_otpol} and for different parameterizations of $\rho_g$ and $\nu$. From darker to lighter blue, the parameters grow larger.}}{\footnotesize\par}
+\end{figure}
+
+
+
+\begin{figure}[H]
+\caption{Crisis Experiments: Aggregate Shocks}
+\label{fig: shock}
+\begin{tabular}{cc}
+(a) Aggregate Income & (b) Borrowing Constraint \\
+\includegraphics[scale=.4]{model/output/figureD2_a.pdf} &
+\includegraphics[scale=.4]{model/output/figureD2_b.pdf}  \\
+\end{tabular}
+\raggedright{}\textit{\footnotesize{}Notes}{: \footnotesize{
+This figure shows the path of aggregate income and borrowing constraints under each of the crisis experiments. The horizontal axis refers to years. For details of each experiment, see Sections \ref{sec_pih} and \ref{sec_otpol}. }}{\footnotesize\par}
+\end{figure}
+
+
+\begin{figure}[H]
+\caption{Liquid Asset Revaluation in Italy}
+\label{fig_liqw_reval}
+\begin{tabular}{cc}
+(a) Liquid Wealth Composition & (b) Liquid Wealth Revaluation  \\
+\includegraphics[scale=1.2]{empirical/output/figureD3_a.pdf} &
+\includegraphics[scale=1.2]{empirical/output/figureD3_b.pdf}  \\
+\end{tabular}
+\raggedright{}\textit{\footnotesize{}Notes}{: \footnotesize{Panel (a) shows the share of liquid assets for the period 1995 to 2016 split into low-risk and high-risk liquid assets. Low-risk liquid assets are deposits and high-risk liquid assets are government bonds, stock holdings, and other securities. Panel (b) shows the change in the value of liquid assets by income level. To calculate the change in the value we impute the observed changes in asset prices across liquid asset classes from peak-to-trough. Data sources: SHIW-BI Italy.}}{\footnotesize\par}
+\end{figure}
+
+
+
+\begin{figure}[H]
+\caption{Consumption-income Elasticities with Wealth Revaluation}
+\label{fig_wealthreval}
+\begin{tabular}{cc}
+(a) Liquid Wealth Distribution & (b) Consumption-income Elasticities  \\
+\includegraphics[scale=.4]{model/output/figureD4_a.pdf} &
+\includegraphics[scale=.4]{model/output/figureD4_b.pdf}  \\
+\end{tabular}  \smallskip \\
+\raggedright{}\textit{\footnotesize{}Notes}{: \footnotesize{{\color{black} Panel (a) shows the liquid wealth share for different deciles of wealth in the model and the data.
+Panel (b) shows  elasticities from the baseline PI experiment and the average elasticities of consumption to income evaluated in the model and the observed liquid wealth distribution with imputed observed wealth revaluations across income deciles (labeled ``wealth reval (model asset dist)" and ``wealth reval (observed asset dist),"  respectively).  Baseline elasticities are computed using average income and consumption by decile and are defined as the ratio of the log change in consumption to the log change in income. The dashed blue line corresponds to locally weighted smoothed data.  Wealth revaluations for each income decile are calculated using observed bond and stock prices during the crisis and the liquid wealth holdings and composition. Further details can be found in Appendix \ref{data_appendix}.  Data sources: SHIW-BI Italy.
+}
+}}{\footnotesize\par}
+\end{figure}
+
+
+\begin{figure}[H]
+\caption{Safe Interest Rates during Crises Episodes}
+\label{fig:safe_rates}
+\begin{tabular}{cc}
+{\footnotesize{}{(a) Italy} } & {\footnotesize{}{ (b) Spain} }\\
+\includegraphics[scale=1.12]{empirical/output/figureD5_a.pdf} &
+\includegraphics[scale=1.12]{empirical/output/figureD5_b.pdf}  \\
+{\footnotesize{}{(c) Mexico} } & {\footnotesize{}{(d) Peru} } \\
+\includegraphics[scale=1.12]{empirical/output/figureD5_c.pdf} &
+\includegraphics[scale=1.12]{empirical/output/figureD5_d.pdf}  \\
+\end{tabular}
+\\ \raggedright{}\textit{\footnotesize{}Notes}{: \footnotesize{{\color{black}Panel (a) and Panel (b) show the real deposit rate in Italy and Spain, respectively, and the German government 10-year bond real rate.
+Panel (c) shows the real deposit rate in Mexico for the average of the Tequila and Global Financial Crises and the U.S.  Treasury 10-year bond real rate.  Panel (d)  shows the real domestic and foreign currency deposit rate in Peru and the U.S.  Treasury 10-year bond real rate. Domestic deposit rates are for households.  Interest rates are in real terms and calculated deflating by ex post inflation.  Data sources: IFS, Bank of Italy,  Bank of Spain,  Central Bank of Peru,  FRED.}}}{\footnotesize\par}
+\end{figure}
+
+\begin{figure}[H]
+\caption{Risky Borrowing Interest Rates during Crises Episodes}
+\label{fig:borrowing_rates}
+\begin{tabular}{cc}
+{\footnotesize{}{(a) Italy} } & {\footnotesize{}{ (b) Spain} }\\
+\includegraphics[scale=1.12]{empirical/output/figureD6_a.pdf} &
+\includegraphics[scale=1.12]{empirical/output/figureD6_b.pdf}  \\
+{\footnotesize{}{(c) Mexico} } & {\footnotesize{}{(d) Peru} } \\
+\includegraphics[scale=1.12]{empirical/output/figureD6_c.pdf} &
+\includegraphics[scale=1.12]{empirical/output/figureD6_d.pdf}  \\
+\end{tabular}
+\\ \raggedright{}\textit{\footnotesize{}Notes}{: \footnotesize{{\color{black}The figures show  domestic lending to deposit bank rates spread and the government bonds' spreads for each episode analyzed.  Domestic lending and deposit bank rates are for households. Spreads are relative to 10-year German bonds for Italy and Spain and EMBI spreads for Mexico and Peru.  Data sources: IFS, Bank of Italy,  Bank of Spain,  Central Bank of Chile,  Central Bank of Peru, FRED.}}}{\footnotesize\par}
+
+\end{figure}
+\begin{figure}[H]
+\caption{Consumption-income Elasticities in PI View Model: Interest Rate Shocks}
+\label{fig:cyelast_extensions_mex}
+\begin{tabular}{cc}
+(a) Baseline: Mexico & (b) Non-homotheticities: Mexico\\
+\includegraphics[scale=0.4]{model/output/figureD7_a.pdf} &
+\includegraphics[scale=0.4]{model/output/figureD7_b.pdf} 
+\end{tabular}
+\raggedright{}\textit{\footnotesize{}Notes}{: \footnotesize{
+This figure shows the average consumption-income elasticities for different income deciles in the Mexican crises (described in Section \ref{sec_empirical}) and the crisis experiments of the model calibrated for Mexico (described in Section \ref{sec_pih}). Panel (a) shows the elasticities in the model extended to include interest rate shocks.  Panel (b) shows the elasticities in the model extended to include interest rate shocks and nonhomothetic preferences (described in Section \ref{sec_pih}).
+The interest rate shock is simulated such that it replicates the interest rate dynamics in Figures \ref{fig:safe_rates} and \ref{fig:borrowing_rates} for Mexico. Elasticities are computed using the average income and consumption by decile, and are defined as the ratio of the log change in consumption to the log change in income. The dashed line corresponds to the locally weighted smoothed data. Further details in Appendix \ref{data_appendix}. Data sources: ENIGH-INEGI Mexico.}}{\footnotesize\par}
+\end{figure}
+
+\begin{table}[H]
+\begin{centering}
+\caption{{\color{black}Consumption Response to Policy: The Role of Hand-to-Mouth Households}
+{\label{tab_policy_htm}}}
+\input{model/output/tableD2}
+\par\end{centering}
+\medskip{}
+\captionsetup{font={small}, margin={0cm,0cm}, justification=justified}
+\raggedright{}\textit{\footnotesize{}Notes}{\footnotesize{}: \color{black}This table shows the marginal propensity to consume (MPC) from a one-time transfer for hand-to-mouth (HtM), non-hand-to-mouth (Non-HtM), and all households (Average) for different scenarios.  MPCs are computed as the difference between consumption with and without the policy,  divided by the transfer received.  Statistics are computed for the baseline transfer policy.  The MPC is computed when the policy is conducted in four alternative scenarios: in the steady state,  during a transitory aggregate income shock without credit tightening,  during the PI view crisis experiment, and during the CT view crisis experiment.  }{\footnotesize\par}
+\end{table}
+
+\begin{figure}[H]
+\caption{Consumption-income Elasticities in the Model: Alternative Measures}
+\label{fig:mitshock_ap}
+\begin{tabular}{cc}
+(a) Theoretical Elasticities & (b) Marginal Propensities to Consume \\
+\includegraphics[scale=0.4]{model/output/figureD8_a.pdf} &
+\includegraphics[scale=0.4]{model/output/figureD8_b.pdf} \\
+\end{tabular}
+\raggedright{}\textit{\footnotesize{}Notes}{: \footnotesize{
+This figure shows different moments of consumption adjustment for different income deciles in the Italian crisis (described in Section \ref{sec_empirical}) and the crisis experiment of the model calibrated for Italy (described in Section \ref{sec_pih}). Panel (a) shows the elasticities from the baseline PI experiment and the average elasticities computed directly from the policy function of consumption evaluated at the steady-state asset level and different levels of the idiosyncratic shock (labeled \textit{theoretical}). Panel (b) shows the MPCs from the baseline PI experiment.  Baseline elasticities are computed using the average income and consumption by decile, and are defined as the ratio of the log change in consumption to the log change in income. Baseline MPCs are defined are defined as the ratio of the level change in consumption to the level change in income.  The dashed line corresponds to locally weighted smoothed data. Further details in Appendix \ref{data_appendix}.
+Data source: SHIW-BI Italy.
+}}{\footnotesize\par}
+\end{figure}
+
+
+\begin{figure}[H]
+\caption{Consumption Response: Protracted Crisis Simulation}
+\label{fig: protracted_shock}
+\includegraphics[scale=0.5]{model/output/figureD9.pdf} \\
+\raggedright{}\textit{\footnotesize{}Notes}{: \footnotesize{This figure shows the consumption-income elasticities simulating the same income path as in the data for Italy.
+Elasticities are computed using average income and consumption by decile, and are defined as the ratio of the log change in consumption to the log change in income. The dashed line corresponds to the locally weighted smoothed data. Further details in Appendix \ref{data_appendix}.
+Data sources: SHIW-BI Italy.}}{\footnotesize\par}
+\end{figure}
+
+\begin{figure}[H]
+\caption{Consumption-income Elasticities in the Model with Aggregate Risk}
+\label{fig:agg_risk}
+\includegraphics[scale=0.5]{model/output/figureD10.pdf} \\
+\raggedright{}\textit{\footnotesize{}Notes}{: \footnotesize{
+This figure shows the consumption-income elasticities for different income deciles in the Italian crisis (described in Section \ref{sec_empirical}) and in the crisis experiments of the model calibrated for Italy (described in Section \ref{sec_pih}).  It shows the experiment from the baseline model, presented in Figure \ref{fig: shock} (labeled \textit{baseline}), and that from the model with aggregate risk (labeled \textit{aggregate risk}), described in Appendix \ref{app_quant}.  Elasticities are computed using the average income and consumption by decile, and are defined as the ratio of the log change in consumption to the log change in income. The dashed line corresponds to locally weighted smoothed data. Further details in Appendix \ref{data_appendix}. Data sources: SHIW-BI Italy.
+}}{\footnotesize\par}
+\end{figure}
+
+
+\begin{figure}[H]
+\caption{Consumption and Interest Rate Responses in a Closed Economy}
+\label{fig: closed_econ}
+\begin{tabular}{cc}
+(a) Consumption-Income Elasticities & (b) Interest Rate \\
+\includegraphics[scale=0.4]{model/output/figureD11_a.pdf} &
+\includegraphics[scale=0.4]{model/output/figureD11_b.pdf} \\
+\end{tabular}
+\raggedright{}\textit{\footnotesize{}Notes}{: \footnotesize{This figure shows the consumption-income elasticities in a closed economy.  Panel (a) shows the experiment from the baseline model, presented in Figure \ref{fig: shock} (labeled \textit{soe}), and that from the closed economy model (labeled \textit{closed}), described in Appendix \ref{app_quant}. Elasticities are computed using average income and consumption by decile, and are as the ratio of the log change in consumption to the log change in income. The dashed line corresponds to locally weighted smoothed data.  Panel (b) shows the interest rate that closes the asset market at the initial steady state aggregate level of net assets holdings. Further details in Appendix \ref{data_appendix}.
+Data sources: SHIW-BI Italy.}}{\footnotesize\par}
+\end{figure}
+
+\begin{figure}[H]
+\caption{Loadings to Aggregate Income and Simulations}
+\label{fig:loadings_data}
+\begin{tabular}{cc}
+(a) Loadings by Decile  & (b) Heterogeneous Impact of Crisis  \vspace{.5em} \\
+\includegraphics[scale=1.25]{empirical/output/figureD12_a.pdf}
+& \includegraphics[scale=0.4]{model/output/figureD12_b.pdf} \\
+\end{tabular}
+\\ \raggedright{}\textit{\footnotesize{}Notes}{: \footnotesize{Panel (a) shows the estimates $\Gamma_d$, i.e. loadings to aggregate income across the income distribution. The dots are point estimates, the line a locally weighted smoother, and the shadow the 95\% confidence interval. The horizontal axis refers to income deciles. Panel (b) shows the simulated drop in income (orange line) in the model extended to include a heterogeneous income process and the observed drop in income (black dots). Data sources: SHIW-Italy.}}{\footnotesize\par}
+\end{figure}
+
+\begin{figure}[H]
+\caption{Heterogeneous Changes in Income Dispersion  and Simulations}
+\label{fig:loadings_data_unc}
+\begin{tabular}{cc}
+(a) Loadings by Decile  & (b) Heterogeneous Impact of Crisis  \vspace{.5em} \\
+\includegraphics[scale=1.25]{empirical/output/figureD13_a.pdf}
+& \includegraphics[scale=0.4]{model/output/figureD13_b.pdf} \\
+\end{tabular}
+\\ \raggedright{}\textit{\footnotesize{}Notes}{:  \footnotesize{Panel (a) shows the estimates of the function $\label{vol_het}$ across the income distribution using specification \eqref{eq:vol_het}. The dots are point estimates, the line a locally weighted smoother, and the dotted lines indicate the upper and lower bounds of the 95\% confidence interval. The horizontal axis refers to income deciles. Panel (b) shows the ratio between the income dispersion in the trough relative to the peak in the data and model. The dotted line indicates the observed values, the dashed line a locally weighted smoother of the observations, and the solid (maroon) line corresponds to the model simulation. Data source: SHIW-Italy.}}{\footnotesize\par}
+\end{figure}
+
+
+\begin{table}[H]
+\begin{centering}
+\caption{Model with Nonhomotheticities: Italy and Mexico}\label{param_nh}
+\input{"model/output/tableD3"}
+\end{centering}
+\end{table}
+
+\begin{table}[H]
+\begin{centering}
+\caption{Model Goodness of Fit: Mexico}\label{mex_fit}
+\input{"model/output/tableD4"}
+\end{centering}
+\end{table}
+
+\begin{figure}[H]
+\caption{Model Extensions: Income Distribution and Subsistence Level of Consumption}
+\label{fig: nonh_ap}
+\begin{tabular}{cc}
+\vspace{-.5em} \\
+(a) Italy & (b) Mexico \\
+ \includegraphics[scale=0.4]{model/output/figureD14_a.pdf} &
+ \includegraphics[scale=0.4]{model/output/figureD14_b.pdf} \\
+\end{tabular}
+\raggedright{}\textit{\footnotesize{}Notes}{: \footnotesize{
+This figure shows the distribution of log income in the calibrated model for Italy and Mexico. Shaded areas indicate the population with an income below the indigence level. We define the indigence level using the World Bank 5.5 USD/day PPP 2011 poverty line. For Mexico, the average poverty level is 15.7\% from 1992 to 2018, and for Italy the average is 1.4\% from 1995 to 2014. The distribution of income is approximated using a log-normal distribution that matches the model's steady-state income distribution. Further details in Appendix \ref{data_appendix}.
+Data source: World Bank.}}{\footnotesize\par}
+\end{figure}
+
+
+\begin{figure}[htbp]
+\caption{Consumption-income Elasticities under the CT View Crisis Experiment}
+\label{fig:ff_cie}
+\begin{tabular}{cc}
+(a) Baseline & (b) Heterogeneous Income Loadings \\
+ \includegraphics[scale=0.4]{model/output/figure7_b_figureD15_a.pdf} &
+ \includegraphics[scale=0.4]{model/output/figureD15_b.pdf} \\
+(c) Wealth Revaluations & (d) Uncertainty Shock \\
+ \includegraphics[scale=0.4]{model/output/figureD15_c.pdf} &
+ \includegraphics[scale=0.4]{model/output/figureD15_d.pdf} 
+\end{tabular} \smallskip \\
+\raggedright{}\textit{\footnotesize{}Notes}{: \footnotesize{This figure shows the consumption-income elasticities for different income deciles in the Italian crisis (described in Section \ref{sec_empirical}) and in the crisis experiments of the model calibrated for Italy (described in Section \ref{sec_otpol}). Panel (a) shows  the elasticities in the baseline model.  Panel (b) shows the elasticities in the model extended to include heterogeneous income processes.  Panel (c) shows the elasticities in the model extended with asset revaluations \textcolor{black}{evaluated at the model's and observed liquid wealth distribution}.  Panel (d) shows the elasticities in the model extended with homogeneous and heterogeneous uncertainty shocks.  Elasticities are computed using average income and consumption by decile, and are defined as the ratio of the log change in consumption to the log change in income. The dashed line corresponds to the locally weighted smoothed data. Further details in Appendix \ref{data_appendix}.
+Data sources: SHIW-BI Italy.
+}}{\footnotesize\par}
+\end{figure}
+
+\begin{figure}[H]
+\caption{Consumption-income Elasticities under Combined Crisis Experiment}
+\label{fig: ident_mix}
+\begin{tabular}{c}
+\vspace{-1.7em} \\
+ \includegraphics[scale=0.45]{model/output/figureD16.pdf}  \\
+\end{tabular}
+\flushleft\raggedright{}\textit{\footnotesize{}Notes}{: \footnotesize{This figure shows the consumption-income elasticities for different income deciles in the Italian crisis (described in Section \ref{sec_empirical}) and in the crisis experiments of the model calibrated for Italy that combines a permanente income for $\nu=2.7$ (value in CT experiment calibration) and $\nu=1.05$ that matches the observed average elasticity. For both, the permanent shock has $\rho_g = 0$.
+Elasticities are computed using average income and consumption by decile, and are defined as the ratio of the log change in consumption to the log change in income. The dashed line corresponds to the locally weighted smoothed data. Further details in Appendix \ref{data_appendix}.
+Data sources: SHIW-BI Italy.}{\footnotesize\par}}
+\end{figure}
+
+\begin{figure}[H]
+\caption{Consumption-income Elasticities: Income-based borrowing constraints}
+\label{fig: shock_incbased_bc}
+\begin{tabular}{cc}
+(a) PI View Experiment & (b)  CT View Experiment \\
+ \includegraphics[scale=0.4]{model/output/figureD17_a.pdf} &
+ \includegraphics[scale=0.4]{model/output/figureD17_b.pdf} \\
+\end{tabular}
+\raggedright{}\textit{\footnotesize{}Notes}{: \footnotesize{This figure shows consumption-income elasticities using an extension of the model that includes idiosyncratic income as part of the collateral.
+Panels (a) and (b) show the elasticities for the permanent-income view experiment and credit-tightening view experiment respectively. Elasticities are computed using average income and consumption by decile, and are the ratio of the log change in consumption to the log change in income. The dashed line corresponds to the locally weighted smoothed data. Further details in Appendix \ref{data_appendix}.
+Data sources: SHIW-BI Italy.}}{\footnotesize\par}
+\end{figure}
+
+\begin{figure}[H]
+\caption{Policy Analysis: Fiscal Policies with Varying Progressivity}
+\label{fig: policy2}
+\begin{tabular}{cc}
+\vspace{-.5em} \\
+(a) Initial Transfers by Progressivity & (b) Aggregate Response by Progressivity \\
+ \includegraphics[scale=0.4]{model/output/figureD18_a.pdf} &
+ \includegraphics[scale=0.4]{model/output/figureD18_b.pdf} \\
+\end{tabular}
+\flushleft\raggedright{}\textit{\footnotesize{}Notes}{: \footnotesize{Panel (a) shows the income transfer each  household in different income deciles receives for different policies that differ in their degree of progressivity $\tau$. Panel (b) shows the ratio of the change in aggregate consumption to the aggregate fiscal transfer for different degrees of progressivity. The dashed blue line corresponds to the MPCs when the policy is conducted in the steady state, the solid orange line to the MPCs when the policy is conducted during the PI view crisis experiment, and the gray line to the MPCs when it is conducted during the CT view crisis experiment.
+}}{\footnotesize\par}
+\end{figure}
+
+
+\end{spacing}
+
+\end{document}
+
