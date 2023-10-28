@@ -66,6 +66,6 @@ Third, ask ChatGPT, the following prompt: *"can you translate this code into Pyt
 
 Fourth, create a second script (.py file) and using the Python code outputted by ChatGPT, go through and manually run the code, edit, and fix it. Take detailed notes (as a .txt file) on your process, errors you identity, and anything else of note (such as dropped variables, inconsistencies, etc). 
 
-Name the code file using the following structure: "fixed_code_yourinitials" (example: fixed_code_IDA.py) and the text file: "fixed_code_notes_yourinitials" (example: fixed_code_IDA.txt). When completed, upload this script and your notes file into the `Translated_code` folder within each article folder. 
+Name the code file using the following structure: "fixed_code_yourinitials" (example: fixed_code_IDA.py) and the text file: "fixed_code_notes_yourinitials" (example: fixed_code_notes_IDA.txt). When completed, upload this script and your notes file into the `Translated_code` folder within each article folder. 
 
 It is very important to save all notes as .txt files (no Word documents) and code as .py files. And please follow the naming structure outlined for each file. 
