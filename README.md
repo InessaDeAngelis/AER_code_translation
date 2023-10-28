@@ -14,7 +14,9 @@ The repo is organized by journal issue, with all the August 2023 materials locat
   
   - [The Micro Anatomy of Macro Consumption Adjustments](https://www.aeaweb.org/articles?id=10.1257/aer.20201931)
   
-  - [The Missing Intercept: A Demand Equivalence Approach](https://www.aeaweb.org/articles?id=10.1257/aer.20211751)
+    - A lot of the data files are too big to upload to Github. Please [download](https://www.openicpsr.org/openicpsr/project/181583/version/V1/view?path=/openicpsr/181583/fcr:versions/V1/empirical&type=folder) the "working data" and "input" folders within the "Empirical" folder. 
+  
+  - ~~[The Missing Intercept: A Demand Equivalence Approach](https://www.aeaweb.org/articles?id=10.1257/aer.20211751)~~ (Hold for now - uses solely MatLab)
   
   - ~~[The Reversal Interest Rate](https://www.aeaweb.org/articles?id=10.1257/aer.20190150)~~ (Hold for now - uses solely MatLab)
   
