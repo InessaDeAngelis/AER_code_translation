@@ -1,0 +1,83 @@
+********************************************************************************
+* Title:   Master do
+* Descrip: installs porgrams and runs other dofiles in correct sequence
+********************************************************************************
+clear all
+set more off
+
+use ../Data/Processed_Data/analyticaldata.dta, clear 
+
+********************************************************************************
+**#1. INSTALLING PROGRAMS FOR DATA ANALYSIS 
+********************************************************************************
+ssc install estout, replace 
+ssc install coefplot, replace 
+net install grc1leg2.pkg, replace from (http://digital.cgdev.org/doc/stata/MO/Misc/)
+ssc install rwolf2, replace 
+ssc install wyoung, replace 
+
+********************************************************************************
+**#2. RUNNING ALL DOFILES IN THE CORRECT ORDER
+********************************************************************************
+set seed 28383
+do ../Code/cleaning_type1type2.do
+do ../Code/tables_type1type2.do
+do ../Code/figures_type1type2.do
+do ../Code/mht_type1type2.do
+do ../Code/AppendixBcleaning2_type1type2.do
+do ../Code/AppendixBanalysis_type1type2.do
+
+- File Path Issues:
+Ensure that the file paths specified for the use and do commands are correctly pointing to the location of your data and dofiles. Make sure that the relative paths are accurate and that the necessary files exist in those locations.
+- Missing Program Checks:
+Before installing or using programs, it's a good practice to check whether they are already installed or available. You can use adopath to check the current Stata adopath for programs and which to see if a specific command is already installed. This can help avoid unnecessary installations or updates.
+
+Below is the revised version provided by ChatGPT 3.5:
+
+********************************************************************************
+* Title:   Master do
+* Descrip: installs programs and runs other dofiles in the correct sequence
+********************************************************************************
+clear all
+set more off
+
+* Check if estout is already installed
+which estout
+if _rc != 0 {
+    ssc install estout, replace
+}
+
+* Check if coefplot is already installed
+which coefplot
+if _rc != 0 {
+    ssc install coefplot, replace
+}
+
+* Check if grc1leg2.pkg is already installed
+which grc1leg2.pkg
+if _rc != 0 {
+    net install grc1leg2.pkg, replace from (http://digital.cgdev.org/doc/stata/MO/Misc/)
+}
+
+* Check if rwolf2 is already installed
+which rwolf2
+if _rc != 0 {
+    ssc install rwolf2, replace
+}
+
+* Check if wyoung is already installed
+which wyoung
+if _rc != 0 {
+    ssc install wyoung, replace
+}
+
+********************************************************************************
+**#2. RUNNING ALL DOFILES IN THE CORRECT ORDER
+********************************************************************************
+set seed 28383
+do ../Code/cleaning_type1type2.do
+do ../Code/tables_type1type2.do
+do ../Code/figures_type1type2.do
+do ../Code/mht_type1type2.do
+do ../Code/AppendixBcleaning2_type1type2.do
+do ../Code/AppendixBanalysis_type1type2.do
