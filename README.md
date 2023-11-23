@@ -53,6 +53,14 @@ The repo is organized by journal issue, with all the August 2023 materials locat
   - ~~[Profits, Scale Economies, and the Gains from Trade and Industrial Policy](https://www.aeaweb.org/articles?id=10.1257/aer.20210419)~~ (data access issues)
   
   - ~~[The Behavioral Foundations of Default Effects: Theory and Evidence from Medicare Part D](https://www.aeaweb.org/articles?id=10.1257/aer.20210013)~~ (data access issues)
+  
+`Other_articles` contains articles from other economics journals and corresponding replication materials located in their own sub-folder: 
+
+  - [The Mission: Human Capital Transmission, Economic Persistence, and Culture in South America](https://academic.oup.com/qje/article/134/1/507/5123742) 
+  
+    - Please look at the ReadMe within this folder re: downloading data that is publicly available. Use [this](https://www.dgeec.mec.pt/np4/dgeec/) link instead for the Paraguayan data (URL listed on the ReadMe is out of date).
+  
+    - There is a single file that is too big to upload to Github. Please [download](https://dataverse-harvard-edu.myaccess.library.utoronto.ca/dataset.xhtml?persistentId=doi:10.7910/DVN/ML1155) the file "IPUMS Brazil.dta" in the "Tables" folder.
 
 ## Instructions
 Please translate the STATA code into Python using the LLMs as much as possible. Then, clearly label the translated code documents with your name and add the file into the `Translated code` folder within each article folder. Throughout the process, take notes about which aspects of the translation the LLMs did well and poorly and identify issues you discovered and fixed during the translation process. 
